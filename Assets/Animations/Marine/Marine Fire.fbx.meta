@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 93d57b54f751d954cb24fa2eaaa42079
+guid: 2f2d80d1c2bceb54785d587300b6c462
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
@@ -33,11 +33,11 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: running
+      name: Attack
       takeName: mixamo.com
       internalID: -203655887218126122
       firstFrame: 0
-      lastFrame: 20
+      lastFrame: 34
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
