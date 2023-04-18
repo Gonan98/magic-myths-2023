@@ -310,7 +310,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tabID:
     x: 0
-    y: 0
+    y: 1
   _name: scv
   code: scv
   category: citizen
@@ -325,7 +325,7 @@ MonoBehaviour:
   coloredRenderers:
   - renderer:
       status: 1
-      obj: {fileID: 0}
+      obj: {fileID: 7315831309133347656}
       indexKey: 0
       entity: {fileID: 4211073665103237725}
     materialID: 0
@@ -730,6 +730,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: scv_model
       objectReference: {fileID: 0}
+    - target: {fileID: 5074512353664290214, guid: bcba856bfb1fffb458911963bec02f27,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 5db52dd781fce6b49a003f7c22694a33, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bcba856bfb1fffb458911963bec02f27, type: 3}
 --- !u!4 &2621656508887355653 stripped
@@ -783,4 +788,11 @@ MonoBehaviour:
     connectedChildren:
     - {fileID: 7233978194069154104}
   rendererConnections:
-    connectedChildren: []
+    connectedChildren:
+    - {fileID: 7315831309133347656}
+--- !u!137 &7315831309133347656 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 5074512353664290214, guid: bcba856bfb1fffb458911963bec02f27,
+    type: 3}
+  m_PrefabInstance: {fileID: 2588241339903588078}
+  m_PrefabAsset: {fileID: 0}
