@@ -146,7 +146,7 @@ MonoBehaviour:
   code: sargent_movement
   isActive: 1
   tabID:
-    x: 0
+    x: 1
     y: 0
   priority: 0
   requireIdleEntity: 1
@@ -407,7 +407,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tabID:
     x: 0
-    y: 0
+    y: 1
   _name: sargent
   code: sargent
   category: military
@@ -422,8 +422,48 @@ MonoBehaviour:
   coloredRenderers:
   - renderer:
       status: 1
-      obj: {fileID: 0}
+      obj: {fileID: 7508139238169892179}
       indexKey: 0
+      entity: {fileID: 2158594942457285485}
+    materialID: 0
+    transparency: 0
+    darkness: 0
+  - renderer:
+      status: 1
+      obj: {fileID: 7508139238169892177}
+      indexKey: 1
+      entity: {fileID: 2158594942457285485}
+    materialID: 0
+    transparency: 0
+    darkness: 0
+  - renderer:
+      status: 1
+      obj: {fileID: 7508139238169892183}
+      indexKey: 2
+      entity: {fileID: 2158594942457285485}
+    materialID: 0
+    transparency: 0
+    darkness: 0
+  - renderer:
+      status: 1
+      obj: {fileID: 7508139238169892181}
+      indexKey: 3
+      entity: {fileID: 2158594942457285485}
+    materialID: 0
+    transparency: 0
+    darkness: 0
+  - renderer:
+      status: 1
+      obj: {fileID: 7508139238169892187}
+      indexKey: 4
+      entity: {fileID: 2158594942457285485}
+    materialID: 0
+    transparency: 0
+    darkness: 0
+  - renderer:
+      status: 1
+      obj: {fileID: 7508139238169892185}
+      indexKey: 5
       entity: {fileID: 2158594942457285485}
     materialID: 0
     transparency: 0
@@ -443,7 +483,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tabID:
     x: 0
-    y: 2
+    y: 0
   maxHealth: 100
   initialHealth: 100
   canIncrease: 1
@@ -625,7 +665,7 @@ NavMeshAgent:
   m_Height: 1.5
   m_BaseOffset: 0
   m_WalkableMask: 7
-  m_ObstacleAvoidanceType: 0
+  m_ObstacleAvoidanceType: 3
 --- !u!1001 &7508139238175071987
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -707,6 +747,42 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 9d4df993be894774282a0b17d51a0723, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5ae220fa0f79ffe41b0102a618febf5a, type: 3}
+--- !u!137 &7508139238169892177 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 13700002, guid: 5ae220fa0f79ffe41b0102a618febf5a,
+    type: 3}
+  m_PrefabInstance: {fileID: 7508139238175071987}
+  m_PrefabAsset: {fileID: 0}
+--- !u!137 &7508139238169892179 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 13700000, guid: 5ae220fa0f79ffe41b0102a618febf5a,
+    type: 3}
+  m_PrefabInstance: {fileID: 7508139238175071987}
+  m_PrefabAsset: {fileID: 0}
+--- !u!137 &7508139238169892181 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 13700006, guid: 5ae220fa0f79ffe41b0102a618febf5a,
+    type: 3}
+  m_PrefabInstance: {fileID: 7508139238175071987}
+  m_PrefabAsset: {fileID: 0}
+--- !u!137 &7508139238169892183 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 13700004, guid: 5ae220fa0f79ffe41b0102a618febf5a,
+    type: 3}
+  m_PrefabInstance: {fileID: 7508139238175071987}
+  m_PrefabAsset: {fileID: 0}
+--- !u!137 &7508139238169892185 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 13700010, guid: 5ae220fa0f79ffe41b0102a618febf5a,
+    type: 3}
+  m_PrefabInstance: {fileID: 7508139238175071987}
+  m_PrefabAsset: {fileID: 0}
+--- !u!137 &7508139238169892187 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 13700008, guid: 5ae220fa0f79ffe41b0102a618febf5a,
+    type: 3}
+  m_PrefabInstance: {fileID: 7508139238175071987}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &7508139238175102993 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100066, guid: 5ae220fa0f79ffe41b0102a618febf5a,
@@ -752,7 +828,13 @@ MonoBehaviour:
     connectedChildren:
     - {fileID: 3351808095607301670}
   rendererConnections:
-    connectedChildren: []
+    connectedChildren:
+    - {fileID: 7508139238169892179}
+    - {fileID: 7508139238169892177}
+    - {fileID: 7508139238169892183}
+    - {fileID: 7508139238169892181}
+    - {fileID: 7508139238169892187}
+    - {fileID: 7508139238169892185}
 --- !u!4 &7508139238175458353 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400066, guid: 5ae220fa0f79ffe41b0102a618febf5a,

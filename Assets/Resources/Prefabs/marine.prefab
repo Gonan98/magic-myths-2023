@@ -407,7 +407,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tabID:
     x: 0
-    y: 0
+    y: 1
   _name: marinev2
   code: marinev2
   category: military
@@ -422,8 +422,16 @@ MonoBehaviour:
   coloredRenderers:
   - renderer:
       status: 1
-      obj: {fileID: 0}
+      obj: {fileID: 4001948920421197218}
       indexKey: 0
+      entity: {fileID: 2407889157946834110}
+    materialID: 0
+    transparency: 0
+    darkness: 0
+  - renderer:
+      status: 1
+      obj: {fileID: 683048041222401882}
+      indexKey: 1
       entity: {fileID: 2407889157946834110}
     materialID: 0
     transparency: 0
@@ -625,7 +633,7 @@ NavMeshAgent:
   m_Height: 1.5
   m_BaseOffset: 0
   m_WalkableMask: 7
-  m_ObstacleAvoidanceType: 0
+  m_ObstacleAvoidanceType: 2
 --- !u!1001 &131013354864703267
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -726,6 +734,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 131013354864703267}
   m_PrefabAsset: {fileID: 0}
+--- !u!137 &683048041222401882 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -8598533457303529351, guid: f4c76d00e26bfa040aabe132dc7d07d8,
+    type: 3}
+  m_PrefabInstance: {fileID: 131013354864703267}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &941281056953715314 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: f4c76d00e26bfa040aabe132dc7d07d8,
@@ -771,4 +785,12 @@ MonoBehaviour:
     connectedChildren:
     - {fileID: 3786343313015470607}
   rendererConnections:
-    connectedChildren: []
+    connectedChildren:
+    - {fileID: 4001948920421197218}
+    - {fileID: 683048041222401882}
+--- !u!137 &4001948920421197218 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -5307293541175897471, guid: f4c76d00e26bfa040aabe132dc7d07d8,
+    type: 3}
+  m_PrefabInstance: {fileID: 131013354864703267}
+  m_PrefabAsset: {fileID: 0}

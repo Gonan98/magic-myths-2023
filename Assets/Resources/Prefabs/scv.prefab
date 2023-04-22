@@ -103,7 +103,7 @@ MonoBehaviour:
   code: scv_movement
   isActive: 1
   tabID:
-    x: 0
+    x: 1
     y: 0
   priority: 0
   requireIdleEntity: 1
@@ -121,24 +121,30 @@ MonoBehaviour:
       defaultValue: 2
   movableTerrainAreas: []
   formation:
-    lastType: {fileID: 11400000, guid: 5abc4719d7c003f4ab588b6e8649f63e, type: 2}
-    type: {fileID: 11400000, guid: 5abc4719d7c003f4ab588b6e8649f63e, type: 2}
+    lastType: {fileID: 11400000, guid: 35416a79068077e409e3f8c81274ce05, type: 2}
+    type: {fileID: 11400000, guid: 35416a79068077e409e3f8c81274ce05, type: 2}
     properties:
       floatProperties:
+      - name: vertical-spacing
+        value: 1
+      - name: horizontal-spacing
+        value: 1
       - name: spacing
         value: 0
-      intProperties: []
+      intProperties:
+      - name: amountPerRow
+        value: 4
   movementPriority: 0
   speed:
-    value: 10
+    value: 5
   acceleration:
-    value: 10
+    value: 999
   mvtAngularSpeed:
-    value: 250
+    value: 999
   canMoveRotate: 1
   minMoveAngle: 40
   canIdleRotate: 1
-  smoothIdleRotation: 1
+  smoothIdleRotation: 0
   idleAngularSpeed:
     value: 2
   mvtAudio:
@@ -310,7 +316,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tabID:
     x: 0
-    y: 1
+    y: 0
   _name: scv
   code: scv
   category: citizen
@@ -330,7 +336,7 @@ MonoBehaviour:
       entity: {fileID: 4211073665103237725}
     materialID: 0
     transparency: 0
-    darkness: 0
+    darkness: 0.3
   spawnLookAt: {fileID: 0}
 --- !u!114 &4625582570332791812
 MonoBehaviour:
@@ -683,7 +689,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: bcba856bfb1fffb458911963bec02f27,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.21
+      value: 0.05
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: bcba856bfb1fffb458911963bec02f27,
         type: 3}
