@@ -44,8 +44,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 2.4045463, z: 1.1375656}
-  m_Center: {x: 0, y: 1.2022731, z: -0.036418915}
+  m_Size: {x: 1.5, y: 2.5, z: 1.5}
+  m_Center: {x: 0, y: 1.25, z: 0}
 --- !u!114 &7501920519589541966
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -173,8 +173,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4487283775959221729}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 56.85639, y: 0, z: 70.41398}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.9, y: 0.9, z: 0.9}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7735328003184134571}
@@ -199,7 +199,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tabID:
     x: 0
-    y: 0
+    y: 1
   _name: blaze
   code: blaze
   category: military
@@ -324,6 +324,14 @@ MonoBehaviour:
     materialID: 0
     transparency: 0
     darkness: 0.3
+  - renderer:
+      status: 1
+      obj: {fileID: 2059579356262547086}
+      indexKey: 14
+      entity: {fileID: 8248995167093866885}
+    materialID: 0
+    transparency: 0
+    darkness: 0.3
   spawnLookAt: {fileID: 0}
 --- !u!114 &2745504751667051898
 MonoBehaviour:
@@ -339,7 +347,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tabID:
     x: 0
-    y: 2
+    y: 0
   maxHealth: 100
   initialHealth: 100
   canIncrease: 1
@@ -509,7 +517,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 4487283775959221729}
   m_Enabled: 0
   m_AgentTypeID: 0
-  m_Radius: 0.5
+  m_Radius: 1
   m_Speed: 10
   m_Acceleration: 8
   avoidancePriority: 50
@@ -518,7 +526,7 @@ NavMeshAgent:
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
-  m_Height: 1.5
+  m_Height: 2.5
   m_BaseOffset: 0
   m_WalkableMask: 7
   m_ObstacleAvoidanceType: 0
@@ -597,11 +605,11 @@ MonoBehaviour:
       intProperties: []
   movementPriority: 0
   speed:
-    value: 10
+    value: 5
   acceleration:
-    value: 10
+    value: 999
   mvtAngularSpeed:
-    value: 250
+    value: 999
   canMoveRotate: 1
   minMoveAngle: 40
   canIdleRotate: 1
@@ -756,7 +764,7 @@ Transform:
   m_GameObject: {fileID: 6971054592203476543}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.9, y: 0.9, z: 0.9}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5735027602669031185}
@@ -796,6 +804,7 @@ MonoBehaviour:
     - {fileID: 7157788883521807860}
     - {fileID: 9136213361819856502}
     - {fileID: 2511013171742348795}
+    - {fileID: 2059579356262547086}
 --- !u!1001 &5196116329049401594
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -868,11 +877,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: blaze_final
       objectReference: {fileID: 0}
+    - target: {fileID: 6091479987449828980, guid: 757ed1d673e2b4946b9237042b1175d5,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 014acefc3405827489ea77d4ce2d919c, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 757ed1d673e2b4946b9237042b1175d5, type: 3}
 --- !u!137 &279096427599487468 stripped
 SkinnedMeshRenderer:
   m_CorrespondingSourceObject: {fileID: 5459450154731784470, guid: 757ed1d673e2b4946b9237042b1175d5,
+    type: 3}
+  m_PrefabInstance: {fileID: 5196116329049401594}
+  m_PrefabAsset: {fileID: 0}
+--- !u!137 &2059579356262547086 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 6091479987449828980, guid: 757ed1d673e2b4946b9237042b1175d5,
     type: 3}
   m_PrefabInstance: {fileID: 5196116329049401594}
   m_PrefabAsset: {fileID: 0}

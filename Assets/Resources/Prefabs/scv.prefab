@@ -112,7 +112,7 @@ MonoBehaviour:
     reloadTime: 5
     range: 10
     idleOnly: 1
-  setTargetTaskUI: {fileID: 0}
+  setTargetTaskUI: {fileID: 11400000, guid: 4d08772a8fb3834488ac912436966c65, type: 2}
   orderAudio:
     fetchType: 0
     items: []
@@ -126,9 +126,9 @@ MonoBehaviour:
     properties:
       floatProperties:
       - name: vertical-spacing
-        value: 1
+        value: 0.2
       - name: horizontal-spacing
-        value: 1
+        value: 0.2
       - name: spacing
         value: 0
       intProperties:
@@ -215,8 +215,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.5286674, y: 2.016677, z: 1.0000076}
-  m_Center: {x: 0.047445297, y: 1.0083385, z: 0.393116}
+  m_Size: {x: 2.5, y: 3, z: 2}
+  m_Center: {x: 0, y: 1.5, z: 0}
 --- !u!114 &55164879346898702
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -238,6 +238,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7376865742006735752}
+  - component: {fileID: 8414992376103678630}
   m_Layer: 0
   m_Name: unit_components
   m_TagString: Untagged
@@ -260,6 +261,128 @@ Transform:
   m_Father: {fileID: 1704499027887999029}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8414992376103678630
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5341607486830524902}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c1e885e8e7860a4f8cceb9aac61c68c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  code: scv_builder
+  isActive: 1
+  tabID:
+    x: 1
+    y: 1
+  priority: 1
+  requireIdleEntity: 1
+  targetFinderData:
+    enabled: 0
+    reloadTime: 5
+    range: 10
+    idleOnly: 1
+  setTargetTaskUI: {fileID: 0}
+  orderAudio:
+    fetchType: 0
+    items: []
+    cooldown:
+      enabled: 1
+      defaultValue: 2
+  progressEnabledAudio:
+    fetchType: 0
+    items: []
+    cooldown:
+      enabled: 1
+      defaultValue: 2
+  progressOverrideController:
+    fetchType: 0
+    items: []
+  progressDuration: 1
+  progressMaxDistance: 0.2
+  inProgressObject:
+    status: 0
+    obj: {fileID: 0}
+    indexKey: 0
+    entity: {fileID: 0}
+  sourceEffect:
+    input: {fileID: 0}
+  targetEffect:
+    input: {fileID: 0}
+  healthPerProgress: 10
+  targetPicker:
+    type: 0
+    options:
+      codes: []
+      categories: []
+  restrictBuildingPlacementOnly: 1
+  creationTasks:
+  - taskTitle: 'Place Building: supply_depot'
+    taskUI: {fileID: 11400000, guid: 19cfcd05e62572b468a04ed828e53ac0, type: 2}
+    requiredResources:
+    - type: {fileID: 11400000, guid: 817705b9382efcb44ba26e24afecab19, type: 2}
+      value:
+        amount: 0
+        capacity: 0
+      nonConsumable: 0
+    factionEntityRequirements: []
+    missingRequirementData:
+      icon: {fileID: 0}
+      color: {r: 0, g: 0, b: 0, a: 0}
+    prefabObject: {fileID: 4607311825967952698, guid: 6eb86636dbca6e34fa541cd4350aaf29,
+      type: 3}
+  - taskTitle: 'Place Building: barrack'
+    taskUI: {fileID: 11400000, guid: 3a791fb502ed5704bad4b886a6798c3c, type: 2}
+    requiredResources:
+    - type: {fileID: 11400000, guid: 817705b9382efcb44ba26e24afecab19, type: 2}
+      value:
+        amount: 0
+        capacity: 0
+      nonConsumable: 0
+    factionEntityRequirements: []
+    missingRequirementData:
+      icon: {fileID: 0}
+      color: {r: 0, g: 0, b: 0, a: 0}
+    prefabObject: {fileID: 5003006342724670547, guid: a3dfc95a58d051c4e8e72ba593d84d31,
+      type: 3}
+  - taskTitle: 'Place Building: command_center'
+    taskUI: {fileID: 11400000, guid: b1ef442dfb3961f498819fbeaf02f496, type: 2}
+    requiredResources:
+    - type: {fileID: 11400000, guid: 817705b9382efcb44ba26e24afecab19, type: 2}
+      value:
+        amount: 0
+        capacity: 0
+      nonConsumable: 0
+    factionEntityRequirements: []
+    missingRequirementData:
+      icon: {fileID: 0}
+      color: {r: 0, g: 0, b: 0, a: 0}
+    prefabObject: {fileID: 3612693221155512463, guid: cacfa3fc8615a1743afccc2e21127246,
+      type: 3}
+  - taskTitle: 'Place Building: turret'
+    taskUI: {fileID: 11400000, guid: fcffb94a12fbbd646adabac5a5276e92, type: 2}
+    requiredResources:
+    - type: {fileID: 11400000, guid: 817705b9382efcb44ba26e24afecab19, type: 2}
+      value:
+        amount: 0
+        capacity: 0
+      nonConsumable: 0
+    factionEntityRequirements: []
+    missingRequirementData:
+      icon: {fileID: 0}
+      color: {r: 0, g: 0, b: 0, a: 0}
+    prefabObject: {fileID: 8198553609859837143, guid: b45227d366b0e60469a0d836fcc97738,
+      type: 3}
+  upgradeTargetCreationTasks: []
+  constructionAudio:
+    fetchType: 0
+    items: []
+    cooldown:
+      enabled: 1
+      defaultValue: 2
 --- !u!1 &8791230516084343374
 GameObject:
   m_ObjectHideFlags: 0
@@ -273,7 +396,6 @@ GameObject:
   - component: {fileID: 4625582570332791812}
   - component: {fileID: 2362977015999560877}
   - component: {fileID: 6457546133285346381}
-  - component: {fileID: 6111095901817639672}
   - component: {fileID: 8645300760009798778}
   m_Layer: 0
   m_Name: scv
@@ -290,8 +412,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8791230516084343374}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 56.85639, y: 0, z: 70.41398}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3605643478346570812}
@@ -352,7 +474,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tabID:
     x: 0
-    y: 2
+    y: 0
   maxHealth: 100
   initialHealth: 100
   canIncrease: 1
@@ -513,27 +635,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
---- !u!95 &6111095901817639672
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8791230516084343374}
-  m_Enabled: 0
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 4f28c54bfb24b3a489502c2758d6e46e, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!195 &8645300760009798778
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -543,7 +644,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 8791230516084343374}
   m_Enabled: 0
   m_AgentTypeID: 0
-  m_Radius: 0.5
+  m_Radius: 1.5
   m_Speed: 10
   m_Acceleration: 8
   avoidancePriority: 50
@@ -552,7 +653,7 @@ NavMeshAgent:
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
-  m_Height: 1.5
+  m_Height: 3
   m_BaseOffset: 0
   m_WalkableMask: 7
   m_ObstacleAvoidanceType: 0
@@ -583,8 +684,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8935773185176173149}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.05, z: 0.5}
-  m_LocalScale: {x: 0.2, y: 1, z: 0.2}
+  m_LocalPosition: {x: 0, y: 0.05, z: 0}
+  m_LocalScale: {x: 0.25, y: 1, z: 0.25}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1704499027887999029}
@@ -669,17 +770,17 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: bcba856bfb1fffb458911963bec02f27,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.7
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: bcba856bfb1fffb458911963bec02f27,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.7
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: bcba856bfb1fffb458911963bec02f27,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.7
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: bcba856bfb1fffb458911963bec02f27,
         type: 3}
@@ -689,12 +790,12 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: bcba856bfb1fffb458911963bec02f27,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.05
+      value: 0.07
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: bcba856bfb1fffb458911963bec02f27,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -0.5
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: bcba856bfb1fffb458911963bec02f27,
         type: 3}
@@ -738,9 +839,44 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5074512353664290214, guid: bcba856bfb1fffb458911963bec02f27,
         type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5074512353664290214, guid: bcba856bfb1fffb458911963bec02f27,
+        type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 5db52dd781fce6b49a003f7c22694a33, type: 2}
+    - target: {fileID: 8879528566716807029, guid: bcba856bfb1fffb458911963bec02f27,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8879528566716807029, guid: bcba856bfb1fffb458911963bec02f27,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8879528566716807029, guid: bcba856bfb1fffb458911963bec02f27,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 8879528566716807029, guid: bcba856bfb1fffb458911963bec02f27,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 8879528566716807029, guid: bcba856bfb1fffb458911963bec02f27,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 8879528566716807029, guid: bcba856bfb1fffb458911963bec02f27,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 180
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bcba856bfb1fffb458911963bec02f27, type: 3}
 --- !u!4 &2621656508887355653 stripped

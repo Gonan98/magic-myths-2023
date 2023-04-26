@@ -147,7 +147,7 @@ MonoBehaviour:
   isActive: 1
   tabID:
     x: 1
-    y: 0
+    y: 1
   priority: 0
   requireIdleEntity: 1
   targetFinderData:
@@ -175,13 +175,13 @@ MonoBehaviour:
   speed:
     value: 10
   acceleration:
-    value: 10
+    value: 999
   mvtAngularSpeed:
-    value: 250
+    value: 999
   canMoveRotate: 1
   minMoveAngle: 40
   canIdleRotate: 1
-  smoothIdleRotation: 1
+  smoothIdleRotation: 0
   idleAngularSpeed:
     value: 2
   mvtAudio:
@@ -283,8 +283,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 2.003385, z: 1.0449295}
-  m_Center: {x: 0, y: 1.0016925, z: 0.11232376}
+  m_Size: {x: 1, y: 2, z: 1}
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!114 &5802872884782703011
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -381,8 +381,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9198008930089406237}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 56.85639, y: 0, z: 70.41398}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1.1, y: 1.1, z: 1.1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1043583366870576861}
@@ -653,7 +653,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 9198008930089406237}
   m_Enabled: 0
   m_AgentTypeID: 0
-  m_Radius: 0.5
+  m_Radius: 1
   m_Speed: 10
   m_Acceleration: 8
   avoidancePriority: 50
@@ -662,7 +662,7 @@ NavMeshAgent:
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
-  m_Height: 1.5
+  m_Height: 2
   m_BaseOffset: 0
   m_WalkableMask: 7
   m_ObstacleAvoidanceType: 3
@@ -680,6 +680,18 @@ PrefabInstance:
     - target: {fileID: 400066, guid: 5ae220fa0f79ffe41b0102a618febf5a, type: 3}
       propertyPath: m_RootOrder
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 400066, guid: 5ae220fa0f79ffe41b0102a618febf5a, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400066, guid: 5ae220fa0f79ffe41b0102a618febf5a, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400066, guid: 5ae220fa0f79ffe41b0102a618febf5a, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 400066, guid: 5ae220fa0f79ffe41b0102a618febf5a, type: 3}
       propertyPath: m_LocalPosition.x
