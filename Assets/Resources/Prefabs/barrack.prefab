@@ -111,7 +111,7 @@ MonoBehaviour:
   isActive: 1
   tabID:
     x: 0
-    y: 0
+    y: 1
   creationTasks:
   - taskTitle: 'Create Unit: marinev2'
     taskUI: {fileID: 11400000, guid: 0059ef3bc86dcad45beea88557a0ad1f, type: 2}
@@ -132,6 +132,17 @@ MonoBehaviour:
       icon: {fileID: 0}
       color: {r: 0, g: 0, b: 0, a: 0}
     prefabObject: {fileID: 1804366032437137779, guid: dbd107d92440e7e4eb113976bfa7b42c,
+      type: 3}
+    limit: 0
+    maxAmount: 0
+  - taskTitle: 'Create Unit: siege_tank'
+    taskUI: {fileID: 11400000, guid: 8908722ac49888b41b16e9fcf805e95a, type: 2}
+    requiredResources: []
+    factionEntityRequirements: []
+    missingRequirementData:
+      icon: {fileID: 0}
+      color: {r: 0, g: 0, b: 0, a: 0}
+    prefabObject: {fileID: 1702407446496924205, guid: 8137ff328a4913649aea41694a82f925,
       type: 3}
     limit: 0
     maxAmount: 0
@@ -183,7 +194,7 @@ Transform:
   m_GameObject: {fileID: 5003006342724670547}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.15, y: 0.15, z: 0.15}
+  m_LocalScale: {x: 0.09, y: 0.1, z: 0.09}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4911760148951410444}

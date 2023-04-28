@@ -578,7 +578,7 @@ MonoBehaviour:
   code: firebat_movement
   isActive: 1
   tabID:
-    x: 0
+    x: 1
     y: 0
   priority: 0
   requireIdleEntity: 1
@@ -605,7 +605,7 @@ MonoBehaviour:
       intProperties: []
   movementPriority: 0
   speed:
-    value: 5
+    value: 6
   acceleration:
     value: 999
   mvtAngularSpeed:

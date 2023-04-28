@@ -147,7 +147,7 @@ MonoBehaviour:
   isActive: 1
   tabID:
     x: 1
-    y: 1
+    y: 0
   priority: 0
   requireIdleEntity: 1
   targetFinderData:
@@ -173,7 +173,7 @@ MonoBehaviour:
       intProperties: []
   movementPriority: 0
   speed:
-    value: 10
+    value: 6
   acceleration:
     value: 999
   mvtAngularSpeed:
@@ -407,7 +407,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tabID:
     x: 0
-    y: 1
+    y: 0
   _name: sargent
   code: sargent
   category: military
