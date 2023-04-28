@@ -239,6 +239,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7376865742006735752}
   - component: {fileID: 8414992376103678630}
+  - component: {fileID: 6235716260127452434}
   m_Layer: 0
   m_Name: unit_components
   m_TagString: Untagged
@@ -325,7 +326,7 @@ MonoBehaviour:
     requiredResources:
     - type: {fileID: 11400000, guid: 817705b9382efcb44ba26e24afecab19, type: 2}
       value:
-        amount: 0
+        amount: 50
         capacity: 0
       nonConsumable: 0
     factionEntityRequirements: []
@@ -339,7 +340,7 @@ MonoBehaviour:
     requiredResources:
     - type: {fileID: 11400000, guid: 817705b9382efcb44ba26e24afecab19, type: 2}
       value:
-        amount: 0
+        amount: 100
         capacity: 0
       nonConsumable: 0
     factionEntityRequirements: []
@@ -353,7 +354,7 @@ MonoBehaviour:
     requiredResources:
     - type: {fileID: 11400000, guid: 817705b9382efcb44ba26e24afecab19, type: 2}
       value:
-        amount: 0
+        amount: 200
         capacity: 0
       nonConsumable: 0
     factionEntityRequirements: []
@@ -367,7 +368,12 @@ MonoBehaviour:
     requiredResources:
     - type: {fileID: 11400000, guid: 817705b9382efcb44ba26e24afecab19, type: 2}
       value:
-        amount: 0
+        amount: 100
+        capacity: 0
+      nonConsumable: 0
+    - type: {fileID: 11400000, guid: 9b01a354bd8faf848b24e4292ad989b7, type: 2}
+      value:
+        amount: 50
         capacity: 0
       nonConsumable: 0
     factionEntityRequirements: []
@@ -383,6 +389,100 @@ MonoBehaviour:
     cooldown:
       enabled: 1
       defaultValue: 2
+--- !u!114 &6235716260127452434
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5341607486830524902}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b611935c044ac3479865dddaa61c62b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  code: comp_code
+  isActive: 1
+  tabID:
+    x: 1
+    y: 1
+  priority: 0
+  requireIdleEntity: 1
+  targetFinderData:
+    enabled: 0
+    reloadTime: 5
+    range: 10
+    idleOnly: 1
+  setTargetTaskUI: {fileID: 0}
+  orderAudio:
+    fetchType: 0
+    items: []
+    cooldown:
+      enabled: 1
+      defaultValue: 2
+  progressEnabledAudio:
+    fetchType: 0
+    items: []
+    cooldown:
+      enabled: 1
+      defaultValue: 2
+  progressOverrideController:
+    fetchType: 0
+    items: []
+  progressDuration: 1
+  progressMaxDistance: 1
+  inProgressObject:
+    status: 0
+    obj: {fileID: 0}
+    indexKey: 0
+    entity: {fileID: 0}
+  sourceEffect:
+    input: {fileID: 0}
+  targetEffect:
+    input: {fileID: 0}
+  collectableResources:
+  - type: {fileID: 11400000, guid: 817705b9382efcb44ba26e24afecab19, type: 2}
+    amount: 0
+    animatorOverrideController:
+      fetchType: 0
+      items: []
+    enableObject:
+      status: 0
+      obj: {fileID: 0}
+      indexKey: 0
+      entity: {fileID: 0}
+    enableAudio:
+      fetchType: 0
+      items: []
+      cooldown:
+        enabled: 0
+        defaultValue: 0
+    sourceEffect:
+      input: {fileID: 0}
+    targetEffect:
+      input: {fileID: 0}
+  - type: {fileID: 11400000, guid: 9b01a354bd8faf848b24e4292ad989b7, type: 2}
+    amount: 0
+    animatorOverrideController:
+      fetchType: 0
+      items: []
+    enableObject:
+      status: 0
+      obj: {fileID: 0}
+      indexKey: 0
+      entity: {fileID: 0}
+    enableAudio:
+      fetchType: 0
+      items: []
+      cooldown:
+        enabled: 0
+        defaultValue: 0
+    sourceEffect:
+      input: {fileID: 0}
+    targetEffect:
+      input: {fileID: 0}
+  onTargetResourceFullSearch: 1
+  onTargetResourceDepletedSearch: 1
 --- !u!1 &8791230516084343374
 GameObject:
   m_ObjectHideFlags: 0

@@ -4895,7 +4895,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 852018628}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 100, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -7337,7 +7337,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   taskUIPrefab: {fileID: 7274516978041509738, guid: 246a0f52de3f20445b30f453779c42ef,
     type: 3}
-  data: []
+  data:
+  - type: {fileID: 11400000, guid: 817705b9382efcb44ba26e24afecab19, type: 2}
+    allowedUIFactionTypes:
+      type: 0
+      options: []
+  - type: {fileID: 11400000, guid: 9b01a354bd8faf848b24e4292ad989b7, type: 2}
+    allowedUIFactionTypes:
+      type: 0
+      options: []
   panel: {fileID: 2115873682}
   resourceDescriptionAsTooltip: 1
   maxCapacityColor: {r: 1, g: 0, b: 0, a: 1}
@@ -9711,9 +9719,9 @@ MonoBehaviour:
     inKey: {fileID: 0}
     outKey: {fileID: 0}
   zoomUseFOV: 0
-  initialHeight: 18
+  initialHeight: 25
   minHeight: 5
-  maxHeight: 18
+  maxHeight: 25
   allowBuildingPlaceZoom: 1
 --- !u!1 &1539575919 stripped
 GameObject:
