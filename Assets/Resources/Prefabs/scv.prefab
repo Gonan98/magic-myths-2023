@@ -277,12 +277,12 @@ MonoBehaviour:
   code: scv_builder
   isActive: 1
   tabID:
-    x: 1
-    y: 1
+    x: 0
+    y: 0
   priority: 1
   requireIdleEntity: 1
   targetFinderData:
-    enabled: 0
+    enabled: 1
     reloadTime: 5
     range: 10
     idleOnly: 1
@@ -332,7 +332,7 @@ MonoBehaviour:
     factionEntityRequirements: []
     missingRequirementData:
       icon: {fileID: 0}
-      color: {r: 0, g: 0, b: 0, a: 0}
+      color: {r: 1, g: 0.2509804, b: 0.2509804, a: 1}
     prefabObject: {fileID: 4607311825967952698, guid: 6eb86636dbca6e34fa541cd4350aaf29,
       type: 3}
   - taskTitle: 'Place Building: barrack'
@@ -346,7 +346,7 @@ MonoBehaviour:
     factionEntityRequirements: []
     missingRequirementData:
       icon: {fileID: 0}
-      color: {r: 0, g: 0, b: 0, a: 0}
+      color: {r: 1, g: 0.2509804, b: 0.2509804, a: 1}
     prefabObject: {fileID: 5003006342724670547, guid: a3dfc95a58d051c4e8e72ba593d84d31,
       type: 3}
   - taskTitle: 'Place Building: command_center'
@@ -360,7 +360,7 @@ MonoBehaviour:
     factionEntityRequirements: []
     missingRequirementData:
       icon: {fileID: 0}
-      color: {r: 0, g: 0, b: 0, a: 0}
+      color: {r: 1, g: 0.2509804, b: 0.2509804, a: 1}
     prefabObject: {fileID: 3612693221155512463, guid: cacfa3fc8615a1743afccc2e21127246,
       type: 3}
   - taskTitle: 'Place Building: turret'
@@ -379,7 +379,7 @@ MonoBehaviour:
     factionEntityRequirements: []
     missingRequirementData:
       icon: {fileID: 0}
-      color: {r: 0, g: 0, b: 0, a: 0}
+      color: {r: 1, g: 0.2509804, b: 0.2509804, a: 1}
     prefabObject: {fileID: 8198553609859837143, guid: b45227d366b0e60469a0d836fcc97738,
       type: 3}
   upgradeTargetCreationTasks: []
@@ -401,16 +401,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b611935c044ac3479865dddaa61c62b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  code: comp_code
+  code: scv_resource_collector
   isActive: 1
   tabID:
     x: 1
     y: 1
-  priority: 0
+  priority: 2
   requireIdleEntity: 1
   targetFinderData:
-    enabled: 0
-    reloadTime: 5
+    enabled: 1
+    reloadTime: 3
     range: 10
     idleOnly: 1
   setTargetTaskUI: {fileID: 0}
@@ -430,7 +430,7 @@ MonoBehaviour:
     fetchType: 0
     items: []
   progressDuration: 1
-  progressMaxDistance: 1
+  progressMaxDistance: 0.2
   inProgressObject:
     status: 0
     obj: {fileID: 0}
@@ -442,13 +442,14 @@ MonoBehaviour:
     input: {fileID: 0}
   collectableResources:
   - type: {fileID: 11400000, guid: 817705b9382efcb44ba26e24afecab19, type: 2}
-    amount: 0
+    amount: 10
     animatorOverrideController:
       fetchType: 0
-      items: []
+      items:
+      - {fileID: 22100000, guid: 59659d83bb9ce444194c8913cf789b09, type: 2}
     enableObject:
       status: 0
-      obj: {fileID: 0}
+      obj: {fileID: 7340813570628685344, guid: c66f1f8d4d1537b44aeb3a80b580a6f5, type: 3}
       indexKey: 0
       entity: {fileID: 0}
     enableAudio:
@@ -462,13 +463,14 @@ MonoBehaviour:
     targetEffect:
       input: {fileID: 0}
   - type: {fileID: 11400000, guid: 9b01a354bd8faf848b24e4292ad989b7, type: 2}
-    amount: 0
+    amount: 10
     animatorOverrideController:
       fetchType: 0
-      items: []
+      items:
+      - {fileID: 22100000, guid: 59659d83bb9ce444194c8913cf789b09, type: 2}
     enableObject:
       status: 0
-      obj: {fileID: 0}
+      obj: {fileID: 8945845417271090863, guid: 1b8da12724b88ff4282d0c7dbf84e44d, type: 3}
       indexKey: 0
       entity: {fileID: 0}
     enableAudio:
@@ -538,7 +540,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tabID:
     x: 0
-    y: 0
+    y: 2
   _name: scv
   code: scv
   category: citizen
@@ -785,7 +787,7 @@ Transform:
   m_GameObject: {fileID: 8935773185176173149}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0.05, z: 0}
-  m_LocalScale: {x: 0.25, y: 1, z: 0.25}
+  m_LocalScale: {x: 0.3, y: 1, z: 0.3}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1704499027887999029}

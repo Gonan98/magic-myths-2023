@@ -140,12 +140,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2ba244131eb1cc47917ba3e9545913d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  code: resource_worker_manager
+  code: mineral_worker_manager
   workerPositions:
-  - status: 0
-    obj: {fileID: 0}
-    indexKey: -1
-    entity: {fileID: 0}
   - status: 0
     obj: {fileID: 0}
     indexKey: -1
@@ -306,18 +302,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tabID:
     x: 0
-    y: 1
+    y: 0
   _name: mineral
-  code: mineral
+  code: mineral_resource
   category: nature
-  description: Recurso mineral
+  description: "Mineral extra\xF1o."
   icon: {fileID: 21300000, guid: 9bba75448251d3843ab6aa17d4d1330a, type: 3}
-  radius: 0.5
+  radius: 1
   model: {fileID: 1187713531534683030}
   resourceType: {fileID: 11400000, guid: 817705b9382efcb44ba26e24afecab19, type: 2}
   canCollect: 1
   canCollectOutsideBorder: 1
-  autoCollect: 0
+  autoCollect: 1
   collectionAudio:
     fetchType: 0
     items: []
@@ -340,8 +336,8 @@ MonoBehaviour:
   tabID:
     x: 0
     y: 0
-  maxHealth: 100
-  initialHealth: 100
+  maxHealth: 500
+  initialHealth: 500
   canIncrease: 1
   canDecrease: 1
   hoverHealthBarY: 4
@@ -393,7 +389,7 @@ NavMeshObstacle:
   m_Enabled: 1
   serializedVersion: 3
   m_Shape: 1
-  m_Extents: {x: 1, y: 1, z: 1}
+  m_Extents: {x: 0.75, y: 1, z: 0.75}
   m_MoveThreshold: 0.1
   m_Carve: 1
   m_CarveOnlyStationary: 1

@@ -125,7 +125,7 @@ Transform:
   m_GameObject: {fileID: 2178473193575970686}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
+  m_LocalScale: {x: 0.075, y: 0.075, z: 0.075}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 382499326964617274}
@@ -151,17 +151,17 @@ MonoBehaviour:
   tabID:
     x: 0
     y: 0
-  _name: gas
-  code: gas
+  _name: Gas
+  code: gas_resource
   category: nature
-  description: Gas natural
+  description: Gas natural.
   icon: {fileID: 21300000, guid: 9bba75448251d3843ab6aa17d4d1330a, type: 3}
   radius: 3
   model: {fileID: 7430318712019867077}
   resourceType: {fileID: 11400000, guid: 9b01a354bd8faf848b24e4292ad989b7, type: 2}
   canCollect: 1
-  canCollectOutsideBorder: 0
-  autoCollect: 0
+  canCollectOutsideBorder: 1
+  autoCollect: 1
   collectionAudio:
     fetchType: 0
     items: []
@@ -184,8 +184,8 @@ MonoBehaviour:
   tabID:
     x: 0
     y: 0
-  maxHealth: 100
-  initialHealth: 100
+  maxHealth: 500
+  initialHealth: 500
   canIncrease: 1
   canDecrease: 1
   hoverHealthBarY: 4
@@ -237,7 +237,7 @@ NavMeshObstacle:
   m_Enabled: 1
   serializedVersion: 3
   m_Shape: 1
-  m_Extents: {x: 25, y: 15, z: 25}
+  m_Extents: {x: 22.5, y: 15, z: 22.5}
   m_MoveThreshold: 0.1
   m_Carve: 1
   m_CarveOnlyStationary: 1
@@ -594,8 +594,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2ba244131eb1cc47917ba3e9545913d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  code: resource_worker_manager
+  code: gas_worker_manager
   workerPositions:
+  - status: 0
+    obj: {fileID: 0}
+    indexKey: -1
+    entity: {fileID: 0}
   - status: 0
     obj: {fileID: 0}
     indexKey: -1
