@@ -240,6 +240,7 @@ GameObject:
   - component: {fileID: 7376865742006735752}
   - component: {fileID: 8414992376103678630}
   - component: {fileID: 6235716260127452434}
+  - component: {fileID: 6311729431075907048}
   m_Layer: 0
   m_Name: unit_components
   m_TagString: Untagged
@@ -278,7 +279,7 @@ MonoBehaviour:
   isActive: 1
   tabID:
     x: 0
-    y: 0
+    y: 2
   priority: 1
   requireIdleEntity: 1
   targetFinderData:
@@ -313,7 +314,7 @@ MonoBehaviour:
     input: {fileID: 0}
   targetEffect:
     input: {fileID: 0}
-  healthPerProgress: 10
+  healthPerProgress: 19
   targetPicker:
     type: 0
     options:
@@ -449,7 +450,7 @@ MonoBehaviour:
       - {fileID: 22100000, guid: 59659d83bb9ce444194c8913cf789b09, type: 2}
     enableObject:
       status: 0
-      obj: {fileID: 7340813570628685344, guid: c66f1f8d4d1537b44aeb3a80b580a6f5, type: 3}
+      obj: {fileID: 0}
       indexKey: 0
       entity: {fileID: 0}
     enableAudio:
@@ -470,7 +471,7 @@ MonoBehaviour:
       - {fileID: 22100000, guid: 59659d83bb9ce444194c8913cf789b09, type: 2}
     enableObject:
       status: 0
-      obj: {fileID: 8945845417271090863, guid: 1b8da12724b88ff4282d0c7dbf84e44d, type: 3}
+      obj: {fileID: 0}
       indexKey: 0
       entity: {fileID: 0}
     enableAudio:
@@ -485,6 +486,87 @@ MonoBehaviour:
       input: {fileID: 0}
   onTargetResourceFullSearch: 1
   onTargetResourceDepletedSearch: 1
+--- !u!114 &6311729431075907048
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5341607486830524902}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 160a6844ec79b1a46bd1ada800ddf31c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  code: dropoff_source
+  isActive: 1
+  tabID:
+    x: 1
+    y: 0
+  priority: 3
+  requireIdleEntity: 1
+  targetFinderData:
+    enabled: 0
+    reloadTime: 5
+    range: 10
+    idleOnly: 1
+  setTargetTaskUI: {fileID: 0}
+  orderAudio:
+    fetchType: 0
+    items: []
+    cooldown:
+      enabled: 1
+      defaultValue: 2
+  targetPicker:
+    type: 0
+    options:
+      codes: []
+      categories: []
+  maxDropOffDistanceEnabled: 0
+  maxDropOffDistance: 10
+  dropOffResources:
+  - type: {fileID: 11400000, guid: 817705b9382efcb44ba26e24afecab19, type: 2}
+    amount: 10
+    animatorOverrideController:
+      fetchType: 0
+      items: []
+    enableObject:
+      status: 0
+      obj: {fileID: 0}
+      indexKey: 0
+      entity: {fileID: 0}
+    enableAudio:
+      fetchType: 0
+      items: []
+      cooldown:
+        enabled: 0
+        defaultValue: 0
+    sourceEffect:
+      input: {fileID: 0}
+    targetEffect:
+      input: {fileID: 0}
+  - type: {fileID: 11400000, guid: 9b01a354bd8faf848b24e4292ad989b7, type: 2}
+    amount: 10
+    animatorOverrideController:
+      fetchType: 0
+      items: []
+    enableObject:
+      status: 0
+      obj: {fileID: 0}
+      indexKey: 0
+      entity: {fileID: 0}
+    enableAudio:
+      fetchType: 0
+      items: []
+      cooldown:
+        enabled: 0
+        defaultValue: 0
+    sourceEffect:
+      input: {fileID: 0}
+    targetEffect:
+      input: {fileID: 0}
+  totalMaxCapacity: 20
+  dropOffOnTargetAvailable: 1
 --- !u!1 &8791230516084343374
 GameObject:
   m_ObjectHideFlags: 0
@@ -540,7 +622,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tabID:
     x: 0
-    y: 2
+    y: 0
   _name: scv
   code: scv
   category: citizen
