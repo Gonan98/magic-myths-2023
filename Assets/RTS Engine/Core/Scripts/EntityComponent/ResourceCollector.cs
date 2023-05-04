@@ -187,6 +187,7 @@ namespace RTSEngine.EntityComponent
         #region Handling Progress
         protected override void OnInProgressEnabled()
         {
+            //Debug.Log($"Recolectando -> {Target.instance.Name}");
             audioMgr.PlaySFX(unit.AudioSourceComponent, Target.instance.CollectionAudio, true);
 
             //unit is coming back after dropping off resources?
@@ -200,6 +201,7 @@ namespace RTSEngine.EntityComponent
 
         protected override void OnProgress()
         {
+            //Debug.Log($"Recolectando -> {Target.instance.Name}");
             Target.instance.Health.Add(new HealthUpdateArgs(-collectableResourcesDic[Target.instance.ResourceType].amount, unit));
         }
         #endregion
@@ -338,6 +340,7 @@ namespace RTSEngine.EntityComponent
 
             if(gridSearch.Search(lastTargetResource.transform.position, TargetFinder.Range, IsTargetValid, playerCommand: false, out IResource potentialTarget) == ErrorMessage.none)
             {
+                //Debug.Log($"Buscando -> {Target.instance.Name}");
                 SetTarget(new TargetData<IEntity> 
                 { 
                     instance = potentialTarget,
