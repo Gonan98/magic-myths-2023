@@ -537,7 +537,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tabID:
     x: 0
-    y: 0
+    y: 1
   _name: command_center
   code: command_center
   category: civilian_building
@@ -547,8 +547,18 @@ MonoBehaviour:
   model: {fileID: 1357461201865308008}
   isMainEntity: 1
   isFactionLocked: 0
-  initResources: []
-  disableResources: []
+  initResources:
+  - type: {fileID: 11400000, guid: 68d06d40671297d41a7dd8dece5ae1b1, type: 2}
+    value:
+      amount: 0
+      capacity: 10
+    nonConsumable: 0
+  disableResources:
+  - type: {fileID: 11400000, guid: 68d06d40671297d41a7dd8dece5ae1b1, type: 2}
+    value:
+      amount: 0
+      capacity: -10
+    nonConsumable: 0
   coloredRenderers:
   - renderer:
       status: 1
@@ -924,6 +934,11 @@ MonoBehaviour:
         amount: 50
         capacity: 0
       nonConsumable: 0
+    - type: {fileID: 11400000, guid: 68d06d40671297d41a7dd8dece5ae1b1, type: 2}
+      value:
+        amount: 1
+        capacity: 0
+      nonConsumable: 1
     factionEntityRequirements: []
     missingRequirementData:
       icon: {fileID: 0}

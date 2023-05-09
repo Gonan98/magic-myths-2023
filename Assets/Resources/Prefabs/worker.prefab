@@ -252,7 +252,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tabID:
     x: 0
-    y: 0
+    y: 1
   _name: Worker
   code: worker
   category: citizen
@@ -263,13 +263,13 @@ MonoBehaviour:
   isMainEntity: 0
   isFactionLocked: 0
   initResources:
-  - type: {fileID: 11400000, guid: b16294d219bf6db449279be57eae3702, type: 2}
+  - type: {fileID: 11400000, guid: 68d06d40671297d41a7dd8dece5ae1b1, type: 2}
     value:
       amount: 1
       capacity: 0
     nonConsumable: 0
   disableResources:
-  - type: {fileID: 11400000, guid: b16294d219bf6db449279be57eae3702, type: 2}
+  - type: {fileID: 11400000, guid: 68d06d40671297d41a7dd8dece5ae1b1, type: 2}
     value:
       amount: -1
       capacity: 0
@@ -298,7 +298,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tabID:
     x: 0
-    y: 0
+    y: 1
   maxHealth: 100
   initialHealth: 100
   canIncrease: 1
@@ -322,7 +322,7 @@ MonoBehaviour:
       enabled: 0
       defaultValue: 0
   destructionEffect:
-    input: {fileID: 3108631485874978096, guid: 96481e0c8da96a54ea2ca46e13acbd32, type: 3}
+    input: {fileID: 0}
   states: []
   destroyState:
     healthRange:
@@ -594,9 +594,9 @@ MonoBehaviour:
   code: builder_component
   isActive: 1
   tabID:
-    x: 0
-    y: 0
-  priority: 0
+    x: 1
+    y: 1
+  priority: 1
   requireIdleEntity: 1
   targetFinderData:
     enabled: 1
@@ -723,9 +723,9 @@ MonoBehaviour:
   code: collector_component
   isActive: 1
   tabID:
-    x: 0
-    y: 0
-  priority: 1
+    x: 1
+    y: 1
+  priority: 2
   requireIdleEntity: 1
   targetFinderData:
     enabled: 1
@@ -820,9 +820,9 @@ MonoBehaviour:
   code: dropoff_source_component
   isActive: 1
   tabID:
-    x: 0
+    x: 1
     y: 0
-  priority: 2
+  priority: 3
   requireIdleEntity: 0
   targetFinderData:
     enabled: 0
@@ -1095,8 +1095,8 @@ MonoBehaviour:
   code: movement_component
   isActive: 1
   tabID:
-    x: 0
-    y: 0
+    x: 1
+    y: 1
   priority: 0
   requireIdleEntity: 1
   targetFinderData:
@@ -1131,7 +1131,7 @@ MonoBehaviour:
   canMoveRotate: 1
   minMoveAngle: 40
   canIdleRotate: 1
-  smoothIdleRotation: 1
+  smoothIdleRotation: 0
   idleAngularSpeed:
     value: 999
   mvtAudio:

@@ -928,8 +928,18 @@ MonoBehaviour:
   model: {fileID: 5510776978506015056}
   isMainEntity: 0
   isFactionLocked: 0
-  initResources: []
-  disableResources: []
+  initResources:
+  - type: {fileID: 11400000, guid: 68d06d40671297d41a7dd8dece5ae1b1, type: 2}
+    value:
+      amount: 2
+      capacity: 0
+    nonConsumable: 0
+  disableResources:
+  - type: {fileID: 11400000, guid: 68d06d40671297d41a7dd8dece5ae1b1, type: 2}
+    value:
+      amount: -2
+      capacity: 0
+    nonConsumable: 0
   coloredRenderers:
   - renderer:
       status: 1
@@ -954,9 +964,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tabID:
     x: 0
-    y: 2
-  maxHealth: 100
-  initialHealth: 100
+    y: 0
+  maxHealth: 300
+  initialHealth: 300
   canIncrease: 1
   canDecrease: 1
   hoverHealthBarY: 4

@@ -1150,6 +1150,7 @@ Transform:
   - {fileID: 267344779998475036}
   - {fileID: 7991167353103673863}
   - {fileID: 5519005080241554657}
+  - {fileID: 1517958980045620908}
   - {fileID: 1580361592376206574}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -1168,7 +1169,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tabID:
     x: 0
-    y: 1
+    y: 0
   _name: siege_tank
   code: siege_tank
   category: military
@@ -1178,8 +1179,18 @@ MonoBehaviour:
   model: {fileID: 9052374376014533189}
   isMainEntity: 0
   isFactionLocked: 0
-  initResources: []
-  disableResources: []
+  initResources:
+  - type: {fileID: 11400000, guid: 68d06d40671297d41a7dd8dece5ae1b1, type: 2}
+    value:
+      amount: 2
+      capacity: 0
+    nonConsumable: 0
+  disableResources:
+  - type: {fileID: 11400000, guid: 68d06d40671297d41a7dd8dece5ae1b1, type: 2}
+    value:
+      amount: -2
+      capacity: 0
+    nonConsumable: 0
   coloredRenderers: []
   spawnLookAt: {fileID: 0}
 --- !u!114 &188754142581282888
@@ -1196,9 +1207,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tabID:
     x: 0
-    y: 2
-  maxHealth: 100
-  initialHealth: 100
+    y: 0
+  maxHealth: 250
+  initialHealth: 250
   canIncrease: 1
   canDecrease: 1
   hoverHealthBarY: 4
@@ -1257,8 +1268,7 @@ MonoBehaviour:
     entity: {fileID: 8092531292402039499}
   animatorOverrideController:
     fetchType: 0
-    items:
-    - {fileID: 22100000, guid: ba1fb6916bab3264a9a77aa0dca5b0fe, type: 2}
+    items: []
   damageAnimationEnabled: 0
   damageAnimationDuration: 0.2
 --- !u!82 &3980538219355408988
@@ -2560,8 +2570,9 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7581837669929170152}
+  - {fileID: 272012901707488}
   m_Father: {fileID: 3572842579251480655}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &9052374376014533189
 MonoBehaviour:
@@ -2576,7 +2587,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   transformConnections:
-    connectedChildren: []
+    connectedChildren:
+    - {fileID: 272012901707488}
+    - {fileID: 3640839303867900774}
   animatorConnections:
     connectedChildren:
     - {fileID: 151902105592828844}
@@ -2750,6 +2763,37 @@ Transform:
   - {fileID: 9110897978811991532}
   m_Father: {fileID: 4792214852914402387}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6072511590779066090
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 272012901707488}
+  m_Layer: 0
+  m_Name: launch_position
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &272012901707488
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6072511590779066090}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.19, z: 0.74}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1580361592376206574}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6338391426318193765
 GameObject:
@@ -3669,6 +3713,403 @@ Transform:
   m_Father: {fileID: 1551714793753568374}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &8332271096611075127
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1517958980045620908}
+  - component: {fileID: 414900257915848584}
+  - component: {fileID: 9213433320435727723}
+  m_Layer: 0
+  m_Name: unit_attack
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1517958980045620908
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8332271096611075127}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3572842579251480655}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &414900257915848584
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8332271096611075127}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d50f81b2617c564f8e5ed1cdaa4cb4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  code: unmounted_attack
+  isActive: 1
+  tabID:
+    x: 0
+    y: 0
+  priority: 0
+  requireIdleEntity: 1
+  targetFinderData:
+    enabled: 1
+    reloadTime: 1
+    range: 10
+    idleOnly: 1
+  setTargetTaskUI: {fileID: 0}
+  orderAudio:
+    fetchType: 0
+    items: []
+    cooldown:
+      enabled: 1
+      defaultValue: 2
+  progressEnabledAudio:
+    fetchType: 0
+    items: []
+    cooldown:
+      enabled: 1
+      defaultValue: 2
+  progressOverrideController:
+    fetchType: 0
+    items:
+    - {fileID: 22100000, guid: ba1fb6916bab3264a9a77aa0dca5b0fe, type: 2}
+  progressDuration: 0
+  progressMaxDistance: 1
+  inProgressObject:
+    status: 0
+    obj: {fileID: 0}
+    indexKey: -1
+    entity: {fileID: 8092531292402039499}
+  sourceEffect:
+    input: {fileID: 0}
+  targetEffect:
+    input: {fileID: 0}
+  isLocked: 0
+  revert: 1
+  engageOptions:
+    engageOnAssign: 1
+    engageWhenAttacked: 1
+    engageOnce: 0
+    engageFriendly: 0
+    autoIgnoreAngleLOS: 1
+    autoIgnoreObstacleLOS: 0
+  targetPicker:
+    type: 0
+    options:
+      codes: []
+      categories: []
+    engageUnits: 1
+    engageBuildings: 1
+  requireTarget: 1
+  reloadDuration: 2
+  delayTriggerEnabled: 0
+  cooldown:
+    enabled: 0
+    defaultValue: 1
+  launcher:
+    useAttackObjects: 1
+    launchType: 1
+    sources:
+    - attackObject:
+        input: {fileID: 1248888120729077278, guid: 891e2e73bb7375e4b94a046ce8f5b374,
+          type: 3}
+      launchPosition:
+        status: 1
+        obj: {fileID: 272012901707488}
+        indexKey: 0
+        entity: {fileID: 8092531292402039499}
+      launchRotationAngles: {x: 0, y: 0, z: 0}
+      accuracyModifier: {x: 0, y: 0, z: 0}
+      preDelayTime: 0
+      postDelayTime: 0
+      launchDelayTime: 0
+      damageInDelay: 0
+      delayParentObject:
+        status: 0
+        obj: {fileID: 0}
+        indexKey: 0
+        entity: {fileID: 0}
+      index: 0
+  damage:
+    enabled: 1
+    data:
+      unit: 10
+      building: 20
+      custom: []
+    areaAttackEnabled: 0
+    areaAttackData: []
+    dotEnabled: 0
+    dotData:
+      infinite: 0
+      cycleDuration: 0
+      cycles: 0
+    hitEffects: []
+    resetDamageDealt: 0
+    damageDealtEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  weapon:
+    toggableObjects: []
+    updateRotation: 1
+    rotateInRangeOnly: 0
+    freezeRotationX: 0
+    freezeRotationY: 0
+    freezeRotationZ: 0
+    smoothRotation: 1
+    rotationDamping: 2
+    forceIdleRotation: 1
+    idleAngles: {x: 0, y: 0, z: 0}
+  lineOfSight:
+    enabled: 0
+    useWeaponObject: 0
+    angle: 40
+    obstacleLayerMask:
+      serializedVersion: 2
+      m_Bits: 0
+    ignoreRotationX: 0
+    ignoreRotationY: 0
+    ignoreRotationZ: 0
+  nextLaunchLogEnabled: 0
+  switchTaskUI: {fileID: 11400000, guid: e89f94753bd23b044b30bae61d8de111, type: 2}
+  switchAttackCooldownUIData:
+    icon: {fileID: 0}
+    color: {r: 1, g: 0, b: 0, a: 1}
+  attackCompleteAudio:
+    fetchType: 0
+    items: []
+    cooldown:
+      enabled: 1
+      defaultValue: 2
+  attackRangeEnterEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  targetLockedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  completeEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  formation:
+    unitStoppingDistance:
+      _min: 3
+      _max: 6
+    buildingStoppingDistance:
+      _min: 3
+      _max: 6
+    noTargetStoppingDistance:
+      _min: 3
+      _max: 6
+    enforceMinStoppingDistance: 0
+    minStoppingDistance: 0.5
+    updateMvtDistance: 2
+    movementFormation:
+      lastType: {fileID: 11400000, guid: 5abc4719d7c003f4ab588b6e8649f63e, type: 2}
+      type: {fileID: 11400000, guid: 5abc4719d7c003f4ab588b6e8649f63e, type: 2}
+      properties:
+        floatProperties:
+        - name: spacing
+          value: 0
+        intProperties: []
+  moveOnAttack: 0
+  followDistance: 15
+  attackMoveEnabled: 1
+  attackMoveTaskUI: {fileID: 0}
+--- !u!114 &9213433320435727723
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8332271096611075127}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d50f81b2617c564f8e5ed1cdaa4cb4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  code: mounted_attack
+  isActive: 0
+  tabID:
+    x: 0
+    y: 0
+  priority: 0
+  requireIdleEntity: 1
+  targetFinderData:
+    enabled: 0
+    reloadTime: 1
+    range: 10
+    idleOnly: 1
+  setTargetTaskUI: {fileID: 0}
+  orderAudio:
+    fetchType: 0
+    items: []
+    cooldown:
+      enabled: 1
+      defaultValue: 2
+  progressEnabledAudio:
+    fetchType: 0
+    items: []
+    cooldown:
+      enabled: 1
+      defaultValue: 2
+  progressOverrideController:
+    fetchType: 0
+    items:
+    - {fileID: 22100000, guid: e9e75343e3eb7cd45a21cc8d008b5336, type: 2}
+  progressDuration: 0
+  progressMaxDistance: 1
+  inProgressObject:
+    status: 0
+    obj: {fileID: 0}
+    indexKey: 0
+    entity: {fileID: 0}
+  sourceEffect:
+    input: {fileID: 0}
+  targetEffect:
+    input: {fileID: 0}
+  isLocked: 0
+  revert: 1
+  engageOptions:
+    engageOnAssign: 1
+    engageWhenAttacked: 1
+    engageOnce: 0
+    engageFriendly: 0
+    autoIgnoreAngleLOS: 1
+    autoIgnoreObstacleLOS: 0
+  targetPicker:
+    type: 0
+    options:
+      codes: []
+      categories: []
+    engageUnits: 1
+    engageBuildings: 1
+  requireTarget: 1
+  reloadDuration: 3
+  delayTriggerEnabled: 0
+  cooldown:
+    enabled: 0
+    defaultValue: 1
+  launcher:
+    useAttackObjects: 1
+    launchType: 1
+    sources:
+    - attackObject:
+        input: {fileID: 1248888120729077278, guid: 891e2e73bb7375e4b94a046ce8f5b374,
+          type: 3}
+      launchPosition:
+        status: 1
+        obj: {fileID: 272012901707488}
+        indexKey: 0
+        entity: {fileID: 8092531292402039499}
+      launchRotationAngles: {x: 0, y: 0, z: 0}
+      accuracyModifier: {x: 0, y: 0, z: 0}
+      preDelayTime: 0
+      postDelayTime: 0
+      launchDelayTime: 0
+      damageInDelay: 0
+      delayParentObject:
+        status: 0
+        obj: {fileID: 0}
+        indexKey: 0
+        entity: {fileID: 0}
+      index: 0
+  damage:
+    enabled: 1
+    data:
+      unit: 15
+      building: 40
+      custom: []
+    areaAttackEnabled: 0
+    areaAttackData: []
+    dotEnabled: 0
+    dotData:
+      infinite: 0
+      cycleDuration: 0
+      cycles: 0
+    hitEffects: []
+    resetDamageDealt: 0
+    damageDealtEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  weapon:
+    toggableObjects: []
+    updateRotation: 1
+    rotateInRangeOnly: 0
+    freezeRotationX: 0
+    freezeRotationY: 0
+    freezeRotationZ: 0
+    smoothRotation: 1
+    rotationDamping: 2
+    forceIdleRotation: 1
+    idleAngles: {x: 0, y: 0, z: 0}
+  lineOfSight:
+    enabled: 0
+    useWeaponObject: 0
+    angle: 40
+    obstacleLayerMask:
+      serializedVersion: 2
+      m_Bits: 0
+    ignoreRotationX: 0
+    ignoreRotationY: 0
+    ignoreRotationZ: 0
+  nextLaunchLogEnabled: 0
+  switchTaskUI: {fileID: 11400000, guid: 4db6668c706c579459397e93924cc918, type: 2}
+  switchAttackCooldownUIData:
+    icon: {fileID: 0}
+    color: {r: 1, g: 0, b: 0, a: 1}
+  attackCompleteAudio:
+    fetchType: 0
+    items: []
+    cooldown:
+      enabled: 1
+      defaultValue: 2
+  attackRangeEnterEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  targetLockedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  completeEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  formation:
+    unitStoppingDistance:
+      _min: 5
+      _max: 8
+    buildingStoppingDistance:
+      _min: 5
+      _max: 8
+    noTargetStoppingDistance:
+      _min: 5
+      _max: 8
+    enforceMinStoppingDistance: 0
+    minStoppingDistance: 0.5
+    updateMvtDistance: 2
+    movementFormation:
+      lastType: {fileID: 11400000, guid: 5abc4719d7c003f4ab588b6e8649f63e, type: 2}
+      type: {fileID: 11400000, guid: 5abc4719d7c003f4ab588b6e8649f63e, type: 2}
+      properties:
+        floatProperties:
+        - name: spacing
+          value: 0
+        intProperties: []
+  moveOnAttack: 0
+  followDistance: 15
+  attackMoveEnabled: 1
+  attackMoveTaskUI: {fileID: 0}
 --- !u!1 &8361795886789035200
 GameObject:
   m_ObjectHideFlags: 0
@@ -3940,7 +4381,7 @@ MonoBehaviour:
     properties:
       floatProperties:
       - name: spacing
-        value: 0
+        value: 1
       intProperties: []
   movementPriority: 0
   speed:
@@ -3952,9 +4393,9 @@ MonoBehaviour:
   canMoveRotate: 1
   minMoveAngle: 40
   canIdleRotate: 1
-  smoothIdleRotation: 1
+  smoothIdleRotation: 0
   idleAngularSpeed:
-    value: 2
+    value: 999
   mvtAudio:
     fetchType: 0
     items: []
