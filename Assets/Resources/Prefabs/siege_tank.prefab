@@ -3724,6 +3724,7 @@ GameObject:
   - component: {fileID: 1517958980045620908}
   - component: {fileID: 414900257915848584}
   - component: {fileID: 9213433320435727723}
+  - component: {fileID: 2139394103883278740}
   m_Layer: 0
   m_Name: unit_attack
   m_TagString: Untagged
@@ -3762,7 +3763,7 @@ MonoBehaviour:
   isActive: 1
   tabID:
     x: 0
-    y: 0
+    y: 2
   priority: 0
   requireIdleEntity: 1
   targetFinderData:
@@ -3847,8 +3848,8 @@ MonoBehaviour:
   damage:
     enabled: 1
     data:
-      unit: 10
-      building: 20
+      unit: 20
+      building: 30
       custom: []
     areaAttackEnabled: 0
     areaAttackData: []
@@ -3905,14 +3906,14 @@ MonoBehaviour:
       m_Calls: []
   formation:
     unitStoppingDistance:
-      _min: 3
-      _max: 6
+      _min: 4
+      _max: 5
     buildingStoppingDistance:
-      _min: 3
-      _max: 6
+      _min: 4
+      _max: 5
     noTargetStoppingDistance:
-      _min: 3
-      _max: 6
+      _min: 4
+      _max: 5
     enforceMinStoppingDistance: 0
     minStoppingDistance: 0.5
     updateMvtDistance: 2
@@ -4030,7 +4031,7 @@ MonoBehaviour:
     enabled: 1
     data:
       unit: 15
-      building: 40
+      building: 30
       custom: []
     areaAttackEnabled: 0
     areaAttackData: []
@@ -4087,13 +4088,13 @@ MonoBehaviour:
       m_Calls: []
   formation:
     unitStoppingDistance:
-      _min: 5
+      _min: 4
       _max: 8
     buildingStoppingDistance:
-      _min: 5
+      _min: 4
       _max: 8
     noTargetStoppingDistance:
-      _min: 5
+      _min: 4
       _max: 8
     enforceMinStoppingDistance: 0
     minStoppingDistance: 0.5
@@ -4110,6 +4111,18 @@ MonoBehaviour:
   followDistance: 15
   attackMoveEnabled: 1
   attackMoveTaskUI: {fileID: 0}
+--- !u!114 &2139394103883278740
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8332271096611075127}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9964744206398047bfb945973949f0e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8361795886789035200
 GameObject:
   m_ObjectHideFlags: 0
@@ -4358,8 +4371,8 @@ MonoBehaviour:
   code: siege_tank_movement
   isActive: 1
   tabID:
-    x: 1
-    y: 1
+    x: 0
+    y: 0
   priority: 0
   requireIdleEntity: 1
   targetFinderData:

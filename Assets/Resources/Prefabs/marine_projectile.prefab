@@ -79,7 +79,7 @@ MonoBehaviour:
   code: marine_attack_obj
   tabID:
     x: 0
-    y: 1
+    y: 2
   enableLifeTime: 1
   defaultLifeTime: 3
   disableTime: 0

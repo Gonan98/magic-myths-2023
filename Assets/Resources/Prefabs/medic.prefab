@@ -285,6 +285,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6110352914605913480}
+  - component: {fileID: 5033259525021066947}
   m_Layer: 0
   m_Name: unit_components
   m_TagString: Untagged
@@ -307,6 +308,68 @@ Transform:
   m_Father: {fileID: 2882290802335500178}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5033259525021066947
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 986427095376352525}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 904a3fd002316b34f89e70e0b37a8717, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  code: healer_component
+  isActive: 1
+  tabID:
+    x: 0
+    y: 1
+  priority: 1
+  requireIdleEntity: 1
+  targetFinderData:
+    enabled: 1
+    reloadTime: 1
+    range: 10
+    idleOnly: 1
+  setTargetTaskUI: {fileID: 0}
+  orderAudio:
+    fetchType: 0
+    items: []
+    cooldown:
+      enabled: 1
+      defaultValue: 2
+  progressEnabledAudio:
+    fetchType: 0
+    items: []
+    cooldown:
+      enabled: 1
+      defaultValue: 2
+  progressOverrideController:
+    fetchType: 0
+    items: []
+  progressDuration: 1
+  progressMaxDistance: 5
+  inProgressObject:
+    status: 0
+    obj: {fileID: 0}
+    indexKey: 0
+    entity: {fileID: 0}
+  sourceEffect:
+    input: {fileID: 7986504087968017091, guid: 12a56ee4630040c4eb17ae9707ed4cef, type: 3}
+  targetEffect:
+    input: {fileID: 9017484664307500583, guid: 1245b8d2997d5b34fb1637be70a7eb05, type: 3}
+  stoppingDistance: 5
+  healthPerProgress: 10
+  targetPicker:
+    type: 0
+    options:
+      codes: []
+      categories: []
+    targetUnits: 1
+    targetExternal: 1
+    targetStored: 0
+    targetBuildings: 0
 --- !u!1 &1008677374822633207
 GameObject:
   m_ObjectHideFlags: 0

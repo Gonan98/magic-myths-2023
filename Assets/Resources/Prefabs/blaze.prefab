@@ -136,8 +136,8 @@ MonoBehaviour:
   code: basic_attack
   isActive: 1
   tabID:
-    x: 0
-    y: 0
+    x: 2
+    y: 2
   priority: 0
   requireIdleEntity: 1
   targetFinderData:
@@ -201,7 +201,7 @@ MonoBehaviour:
   damage:
     enabled: 1
     data:
-      unit: 6
+      unit: 10
       building: 6
       custom: []
     areaAttackEnabled: 0
@@ -283,14 +283,14 @@ MonoBehaviour:
         m_CallState: 2
   formation:
     unitStoppingDistance:
-      _min: 0
-      _max: 3
+      _min: 3
+      _max: 4
     buildingStoppingDistance:
-      _min: 0
-      _max: 3
+      _min: 3
+      _max: 4
     noTargetStoppingDistance:
-      _min: 0
-      _max: 3
+      _min: 3
+      _max: 4
     enforceMinStoppingDistance: 0
     minStoppingDistance: 0.5
     updateMvtDistance: 2
@@ -578,8 +578,8 @@ MonoBehaviour:
   tabID:
     x: 0
     y: 0
-  maxHealth: 120
-  initialHealth: 120
+  maxHealth: 150
+  initialHealth: 150
   canIncrease: 1
   canDecrease: 1
   hoverHealthBarY: 4
@@ -1060,11 +1060,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4584431484625042, guid: 2370d122d043bb74094941ed442e0244, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.39999995
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 4584431484625042, guid: 2370d122d043bb74094941ed442e0244, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.39999995
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 4584431484625042, guid: 2370d122d043bb74094941ed442e0244, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1372,11 +1372,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4584431484625042, guid: 2370d122d043bb74094941ed442e0244, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.39999995
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 4584431484625042, guid: 2370d122d043bb74094941ed442e0244, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.39999995
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 4584431484625042, guid: 2370d122d043bb74094941ed442e0244, type: 3}
       propertyPath: m_LocalPosition.x

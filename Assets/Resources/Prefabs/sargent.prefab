@@ -190,14 +190,14 @@ MonoBehaviour:
       m_Calls: []
   formation:
     unitStoppingDistance:
-      _min: 3
-      _max: 6
+      _min: 5
+      _max: 7
     buildingStoppingDistance:
-      _min: 3
-      _max: 6
+      _min: 5
+      _max: 7
     noTargetStoppingDistance:
-      _min: 3
-      _max: 6
+      _min: 5
+      _max: 7
     enforceMinStoppingDistance: 0
     minStoppingDistance: 0.5
     updateMvtDistance: 2
