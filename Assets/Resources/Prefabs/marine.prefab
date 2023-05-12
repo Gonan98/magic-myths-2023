@@ -2293,8 +2293,8 @@ MonoBehaviour:
   tabID:
     x: 0
     y: 0
-  _name: marinev2
-  code: marinev2
+  _name: marine
+  code: marine
   category: military
   description: Unidad de combate principal.
   icon: {fileID: 21300000, guid: f1b29190b0ae2bf4693f783debe79c85, type: 3}
