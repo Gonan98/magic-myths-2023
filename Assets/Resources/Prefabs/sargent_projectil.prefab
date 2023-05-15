@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 155117512681532311}
   - component: {fileID: 7280633264601875424}
   - component: {fileID: 1032785047105715529}
+  - component: {fileID: 3476240841123802156}
   m_Layer: 0
   m_Name: sargent_projectil
   m_TagString: Untagged
@@ -47,7 +48,7 @@ SphereCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.25
-  m_Center: {x: 0, y: 0, z: 0.25}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &7280633264601875424
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -79,9 +80,9 @@ MonoBehaviour:
   code: sargent_attack_obj
   tabID:
     x: 0
-    y: 1
+    y: 0
   enableLifeTime: 1
-  defaultLifeTime: 3
+  defaultLifeTime: 1
   disableTime: 0
   spawnPositionOffset: {x: 0, y: 0, z: 0}
   offsetLocalPosition: 0
@@ -167,7 +168,21 @@ MonoBehaviour:
       enabled: 1
       defaultValue: 2
   triggerEffectsPostDelay: 1
-  hitEffects: []
+  hitEffects:
+  - picker:
+      type: 0
+      options:
+        codes: []
+        categories: []
+    effect:
+      input: {fileID: 1879272669879180, guid: 7799f50a7d035ac49b425eaa138ecdbb, type: 3}
+    faceSource: 1
+    audio:
+      fetchType: 0
+      items: []
+      cooldown:
+        enabled: 0
+        defaultValue: 0
   obstacleHitEffect:
     picker:
       type: 0
@@ -183,6 +198,28 @@ MonoBehaviour:
       cooldown:
         enabled: 1
         defaultValue: 2
+--- !u!114 &3476240841123802156
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2753692677361218135}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  observableSearch: 2
+  ObservedComponents: []
+  sceneViewId: 0
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
 --- !u!1001 &8640989859291574725
 PrefabInstance:
   m_ObjectHideFlags: 0

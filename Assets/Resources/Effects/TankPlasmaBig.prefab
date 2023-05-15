@@ -4706,7 +4706,7 @@ GameObject:
   - component: {fileID: 198228151580939694}
   - component: {fileID: 199187720539646952}
   m_Layer: 0
-  m_Name: TankPlasma
+  m_Name: TankPlasmaBig
   m_TagString: FX
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

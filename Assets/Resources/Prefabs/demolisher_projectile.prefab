@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5019243053941877171}
   - component: {fileID: 1890594835360949314}
   - component: {fileID: 2146570048620594413}
+  - component: {fileID: 42670113687190267}
   m_Layer: 0
   m_Name: demolisher_projectile
   m_TagString: Untagged
@@ -78,10 +79,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   code: demolisher_projectile
   tabID:
-    x: 1
-    y: 1
+    x: 0
+    y: 0
   enableLifeTime: 1
-  defaultLifeTime: 3
+  defaultLifeTime: 1
   disableTime: 0
   spawnPositionOffset: {x: 0, y: 0, z: 0}
   offsetLocalPosition: 0
@@ -175,7 +176,7 @@ MonoBehaviour:
         categories: []
     effect:
       input: {fileID: 1228869523896316, guid: 8fd4610f644df9049b7cd683ce68ac42, type: 3}
-    faceSource: 0
+    faceSource: 1
     audio:
       fetchType: 0
       items: []
@@ -197,6 +198,28 @@ MonoBehaviour:
       cooldown:
         enabled: 1
         defaultValue: 2
+--- !u!114 &42670113687190267
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2215613527718340454}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  observableSearch: 2
+  ObservedComponents: []
+  sceneViewId: 0
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
 --- !u!1001 &5690144748906513754
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -6,9 +6,9 @@ AnimatorOverrideController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: unmounted_siege_tank_animator
+  m_Name: tank_siege_mode
   m_Controller: {fileID: 9100000, guid: 4f28c54bfb24b3a489502c2758d6e46e, type: 2}
   m_Clips:
-  - m_OriginalClip: {fileID: 7400000, guid: 55b2840a3c513db48b88350b9279297a, type: 2}
-    m_OverrideClip: {fileID: 4781951162920444690, guid: b1fb15bee05f8b944889ccb2904ebf3e,
+  - m_OriginalClip: {fileID: 7400000, guid: bc459f3943a6900448e16eacce69679f, type: 2}
+    m_OverrideClip: {fileID: -1246731831762816583, guid: b1fb15bee05f8b944889ccb2904ebf3e,
       type: 3}

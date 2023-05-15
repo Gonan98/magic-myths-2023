@@ -1127,6 +1127,8 @@ GameObject:
   - component: {fileID: 121542806012571925}
   - component: {fileID: 3980538219355408988}
   - component: {fileID: 5062547548140954578}
+  - component: {fileID: 5550477826458795723}
+  - component: {fileID: 8690519446348847231}
   m_Layer: 0
   m_Name: siege_tank
   m_TagString: Untagged
@@ -1208,8 +1210,8 @@ MonoBehaviour:
   tabID:
     x: 0
     y: 0
-  maxHealth: 250
-  initialHealth: 250
+  maxHealth: 200
+  initialHealth: 200
   canIncrease: 1
   canDecrease: 1
   hoverHealthBarY: 4
@@ -1389,6 +1391,40 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 7
   m_ObstacleAvoidanceType: 0
+--- !u!114 &5550477826458795723
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1702407446496924205}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30b05629f067d4040a1776bbdef0b21a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &8690519446348847231
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1702407446496924205}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  observableSearch: 2
+  ObservedComponents: []
+  sceneViewId: 0
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
 --- !u!1 &2009468615574568235
 GameObject:
   m_ObjectHideFlags: 0
@@ -2208,6 +2244,37 @@ Transform:
   m_Father: {fileID: 1551714793753568374}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &4241373009158329511
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4341287845007027826}
+  m_Layer: 0
+  m_Name: siege_launch_position
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4341287845007027826
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4241373009158329511}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.62, z: 0.74}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1580361592376206574}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4435709046232843949
 GameObject:
   m_ObjectHideFlags: 0
@@ -2571,6 +2638,7 @@ Transform:
   m_Children:
   - {fileID: 7581837669929170152}
   - {fileID: 272012901707488}
+  - {fileID: 4341287845007027826}
   m_Father: {fileID: 3572842579251480655}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2590,6 +2658,7 @@ MonoBehaviour:
     connectedChildren:
     - {fileID: 272012901707488}
     - {fileID: 3640839303867900774}
+    - {fileID: 4341287845007027826}
   animatorConnections:
     connectedChildren:
     - {fileID: 151902105592828844}
@@ -2774,7 +2843,7 @@ GameObject:
   m_Component:
   - component: {fileID: 272012901707488}
   m_Layer: 0
-  m_Name: launch_position
+  m_Name: normal_launch_position
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3240,7 +3309,7 @@ GameObject:
   - component: {fileID: 7581837669929170152}
   - component: {fileID: 151902105592828844}
   m_Layer: 0
-  m_Name: siege_tank_model
+  m_Name: tank
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3724,7 +3793,6 @@ GameObject:
   - component: {fileID: 1517958980045620908}
   - component: {fileID: 414900257915848584}
   - component: {fileID: 9213433320435727723}
-  - component: {fileID: 2139394103883278740}
   m_Layer: 0
   m_Name: unit_attack
   m_TagString: Untagged
@@ -3763,7 +3831,7 @@ MonoBehaviour:
   isActive: 1
   tabID:
     x: 0
-    y: 2
+    y: 0
   priority: 0
   requireIdleEntity: 1
   targetFinderData:
@@ -3826,7 +3894,7 @@ MonoBehaviour:
     launchType: 1
     sources:
     - attackObject:
-        input: {fileID: 1248888120729077278, guid: 891e2e73bb7375e4b94a046ce8f5b374,
+        input: {fileID: 6554923001840711702, guid: c38ee5c45ac2b444ab4b033371102d3a,
           type: 3}
       launchPosition:
         status: 1
@@ -3906,14 +3974,14 @@ MonoBehaviour:
       m_Calls: []
   formation:
     unitStoppingDistance:
-      _min: 4
-      _max: 5
+      _min: 5
+      _max: 6
     buildingStoppingDistance:
-      _min: 4
-      _max: 5
+      _min: 5
+      _max: 6
     noTargetStoppingDistance:
-      _min: 4
-      _max: 5
+      _min: 5
+      _max: 6
     enforceMinStoppingDistance: 0
     minStoppingDistance: 0.5
     updateMvtDistance: 2
@@ -4012,8 +4080,8 @@ MonoBehaviour:
           type: 3}
       launchPosition:
         status: 1
-        obj: {fileID: 272012901707488}
-        indexKey: 0
+        obj: {fileID: 4341287845007027826}
+        indexKey: 2
         entity: {fileID: 8092531292402039499}
       launchRotationAngles: {x: 0, y: 0, z: 0}
       accuracyModifier: {x: 0, y: 0, z: 0}
@@ -4088,14 +4156,14 @@ MonoBehaviour:
       m_Calls: []
   formation:
     unitStoppingDistance:
-      _min: 4
-      _max: 8
+      _min: 5
+      _max: 9
     buildingStoppingDistance:
-      _min: 4
-      _max: 8
+      _min: 5
+      _max: 9
     noTargetStoppingDistance:
-      _min: 4
-      _max: 8
+      _min: 5
+      _max: 9
     enforceMinStoppingDistance: 0
     minStoppingDistance: 0.5
     updateMvtDistance: 2
@@ -4111,18 +4179,6 @@ MonoBehaviour:
   followDistance: 15
   attackMoveEnabled: 1
   attackMoveTaskUI: {fileID: 0}
---- !u!114 &2139394103883278740
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8332271096611075127}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a9964744206398047bfb945973949f0e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &8361795886789035200
 GameObject:
   m_ObjectHideFlags: 0

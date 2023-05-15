@@ -974,6 +974,7 @@ GameObject:
   - component: {fileID: 1206517584758044427}
   - component: {fileID: 5594890479016197768}
   - component: {fileID: 2973824846013907887}
+  - component: {fileID: 8964860845208311227}
   m_Layer: 0
   m_Name: firebat
   m_TagString: Untagged
@@ -1120,9 +1121,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tabID:
     x: 0
-    y: 1
-  maxHealth: 100
-  initialHealth: 100
+    y: 0
+  maxHealth: 75
+  initialHealth: 75
   canIncrease: 1
   canDecrease: 1
   hoverHealthBarY: 4
@@ -1135,7 +1136,7 @@ MonoBehaviour:
       enabled: 1
       defaultValue: 2
   destroyObject: 1
-  destroyObjectDelay: 0
+  destroyObjectDelay: 3
   destroyAward: []
   destructionAudio:
     fetchType: 0
@@ -1303,6 +1304,28 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 7
   m_ObstacleAvoidanceType: 0
+--- !u!114 &8964860845208311227
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1804366032437137779}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  observableSearch: 2
+  ObservedComponents: []
+  sceneViewId: 0
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
 --- !u!1 &2226927586997179362
 GameObject:
   m_ObjectHideFlags: 0

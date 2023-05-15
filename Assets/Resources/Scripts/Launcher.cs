@@ -1,10 +1,9 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using Photon.Pun;
 using Photon.Realtime;
-using UnityEngine.SceneManagement;
+using System.Linq;
 
 public class Launcher : MonoBehaviourPunCallbacks
 {
@@ -12,7 +11,12 @@ public class Launcher : MonoBehaviourPunCallbacks
 
     #region Private Serializable Fields
 
-
+    [SerializeField] private Text RoomNameText;
+    [SerializeField] private Transform RoomListContent;
+    [SerializeField] private GameObject RoomListItemPrefab;
+    [SerializeField] private Transform PlayerListContent;
+    [SerializeField] private GameObject PlayerListItemPrefab;
+    [SerializeField] private GameObject StartGameButton;
 
     #endregion
 
@@ -50,12 +54,39 @@ public class Launcher : MonoBehaviourPunCallbacks
     {
         Debug.Log("Connected to Master.");
         PhotonNetwork.JoinLobby();
-        PhotonNetwork.AutomaticallySyncScene = true;
     }
 
     public override void OnJoinedLobby()
     {
-        MenuManager.Instance.OpenMenu("UserName");
+        Debug.Log("Connected to Lobby");
+        if (string.IsNullOrEmpty(PhotonNetwork.NickName))
+            MenuManager.Instance.OpenMenu("UserName");
+        else
+            MenuManager.Instance.OpenMenu("Main");
+    }
+
+    public override void OnJoinedRoom()
+    {
+        MenuManager.Instance.OpenMenu("Room");
+        RoomNameText.text = "Sala: " + PhotonNetwork.CurrentRoom.Name;
+        Player[] players = PhotonNetwork.PlayerList;
+
+        foreach(Transform child in PlayerListContent)
+        {
+            Destroy(child.gameObject);
+        }
+
+        for (int i = 0; i < players.Count(); i++)
+        {
+            Instantiate(PlayerListItemPrefab, PlayerListContent).GetComponent<PlayerListItem>().SetUp(players[i]);
+        }
+
+        StartGameButton.SetActive(PhotonNetwork.IsMasterClient);
+    }
+
+    public override void OnMasterClientSwitched(Player newMasterClient)
+    {
+        StartGameButton.SetActive(PhotonNetwork.IsMasterClient);
     }
 
     public override void OnDisconnected(DisconnectCause cause)
@@ -66,6 +97,29 @@ public class Launcher : MonoBehaviourPunCallbacks
     public override void OnCreateRoomFailed(short returnCode, string message)
     {
         
+    }
+
+    public override void OnRoomListUpdate(List<RoomInfo> roomList)
+    {
+        foreach(Transform t in RoomListContent)
+        {
+            Destroy(t.gameObject);
+        }
+        for(int i = 0; i < roomList.Count; i++)
+        {
+            if (roomList[i].RemovedFromList) continue;
+            Instantiate(RoomListItemPrefab, RoomListContent).GetComponent<RoomListItem>().SetUp(roomList[i]);
+        }
+    }
+
+    public override void OnPlayerEnteredRoom(Player newPlayer)
+    {
+        Instantiate(PlayerListItemPrefab, PlayerListContent).GetComponent<PlayerListItem>().SetUp(newPlayer);
+    }
+
+    public override void OnLeftRoom()
+    {
+        MenuManager.Instance.OpenMenu("Main");
     }
 
     #endregion
@@ -85,6 +139,19 @@ public class Launcher : MonoBehaviourPunCallbacks
         MenuManager.Instance.OpenMenu("Loading");
     }
 
+    public void JoinRoom(InputField roomName)
+    {
+        if (string.IsNullOrEmpty(roomName.text)) return;
+        PhotonNetwork.JoinRoom(roomName.text);
+        MenuManager.Instance.OpenMenu("Loading");
+    }
+
+    public void JoinRoom(RoomInfo info)
+    {
+        PhotonNetwork.JoinRoom(info.Name);
+        MenuManager.Instance.OpenMenu("Loading");
+    }
+
     public void OnClickPanel(string menu)
     {
         MenuManager.Instance.OpenMenu(menu);
@@ -93,6 +160,27 @@ public class Launcher : MonoBehaviourPunCallbacks
     public void OnClickBack()
     {
         MenuManager.Instance.OpenMenu("Main");
+    }
+
+    public void StartGame()
+    {
+        PhotonNetwork.LoadLevel(1);
+    }
+
+    public void LeaveRoom()
+    {
+        PhotonNetwork.LeaveRoom();
+        MenuManager.Instance.OpenMenu("Loading");
+    }
+
+    public void SetPlayerReady(bool ready)
+    {
+
+    }
+
+    public void SetPlayerReady(Player player, bool ready)
+    {
+        
     }
 
     #endregion
