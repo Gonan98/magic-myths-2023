@@ -39,6 +39,7 @@ public class Launcher : MonoBehaviourPunCallbacks
         Debug.Log("Connecting to Master");
         PhotonNetwork.ConnectUsingSettings();
         PhotonNetwork.GameVersion = gameVersion;
+        PhotonNetwork.AutomaticallySyncScene = true;
     }
 
     void Update()

@@ -5,6 +5,7 @@ using UnityEngine;
 using RTSEngine.Game;
 using RTSEngine.NPC;
 using RTSEngine.Event;
+using Photon.Realtime;
 
 namespace RTSEngine.Faction
 {
@@ -23,7 +24,7 @@ namespace RTSEngine.Faction
 
         event CustomEventHandler<IFactionSlot, EventArgs> FactionSlotStateUpdated;
 
-        void Init(FactionSlotData data, int ID, IGameManager gameMgr);
+        void Init(FactionSlotData data, int ID, IGameManager gameMgr, Player player);
         void InitDefaultFactionEntities();
 
         void UpdateState(FactionSlotState newState);

@@ -10,8 +10,6 @@ public class PlayerListItem : MonoBehaviourPunCallbacks
 	[SerializeField] private Text NameText;
     [SerializeField] private Text PingText;
     [SerializeField] private Text ReadyText;
-    private bool ready;
-    private bool interactable;
 	Player player;
 
     void Awake()
@@ -29,7 +27,6 @@ public class PlayerListItem : MonoBehaviourPunCallbacks
 		player = _player;
 		NameText.text = _player.NickName;
         PingText.text = PhotonNetwork.GetPing().ToString() + " ms";
-        ready = false;
 	}
 
 	public override void OnPlayerLeftRoom(Player otherPlayer)

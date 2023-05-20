@@ -7,6 +7,7 @@ using RTSEngine.Audio;
 using RTSEngine.Effect;
 using RTSEngine.Model;
 using RTSEngine.Utilities;
+using Photon.Pun;
 
 namespace RTSEngine.EntityComponent
 {
@@ -82,7 +83,6 @@ namespace RTSEngine.EntityComponent
                 || !IsActive
                 || factionEntity.Health.IsDead) //if the faction entity is dead, do not proceed.
                 return;
-
 
             OnUpdate();
 

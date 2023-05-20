@@ -8,9 +8,11 @@ using RTSEngine.Event;
 using RTSEngine.Game;
 using RTSEngine.Health;
 
+using Photon.Pun;
+
 namespace RTSEngine.Entities
 {
-    public class Building : FactionEntity, IBuilding
+    public class Building : FactionEntity, IBuilding, IPunInstantiateMagicCallback
     {
         #region Class Attributes
         public override EntityType Type => EntityType.building;
@@ -190,6 +192,15 @@ namespace RTSEngine.Entities
         }
 
         protected virtual void OnConstructionComplete() { }
+
+        public void OnPhotonInstantiate(PhotonMessageInfo info)
+        {
+            if (!info.photonView.IsMine)
+            {   
+                InitBuildingParameters initParameters = JsonUtility.FromJson<InitBuildingParameters>((string)info.photonView.InstantiationData[0]);
+                Init(FindAnyObjectByType<GameManager>(), initParameters);
+            }
+        }
         #endregion
     }
 }

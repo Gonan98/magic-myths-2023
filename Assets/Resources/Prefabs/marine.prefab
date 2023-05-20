@@ -386,6 +386,7 @@ GameObject:
   - component: {fileID: 458182501617602760}
   - component: {fileID: 3786343313015470607}
   - component: {fileID: 5940264169055303336}
+  - component: {fileID: 1830645519334958995}
   m_Layer: 0
   m_Name: marine_model
   m_TagString: Untagged
@@ -409,6 +410,7 @@ Transform:
   - {fileID: 6803615045137410564}
   - {fileID: 5017796596774190783}
   - {fileID: 8319581592879298664}
+  - {fileID: 8820398269315972791}
   m_Father: {fileID: 8880378404964014004}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -450,6 +452,7 @@ MonoBehaviour:
     - {fileID: 8319581592879298664}
     - {fileID: 3377681643816967853}
     - {fileID: 5017796596774190783}
+    - {fileID: 8820398269315972791}
   animatorConnections:
     connectedChildren:
     - {fileID: 3786343313015470607}
@@ -457,6 +460,42 @@ MonoBehaviour:
     connectedChildren:
     - {fileID: 4001948920421197218}
     - {fileID: 683048041222401882}
+--- !u!114 &1830645519334958995
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 941281056953715314}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b8c4a61274f60b4ea5fb4299cfdbf14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ShowLayerWeightsInspector: 1
+  ShowParameterInspector: 1
+  m_SynchronizeParameters:
+  - Type: 4
+    SynchronizeType: 1
+    Name: IsIdle
+  - Type: 4
+    SynchronizeType: 1
+    Name: IsTakeDamage
+  - Type: 4
+    SynchronizeType: 1
+    Name: IsDead
+  - Type: 4
+    SynchronizeType: 1
+    Name: IsMoving
+  - Type: 4
+    SynchronizeType: 1
+    Name: InMvtState
+  - Type: 4
+    SynchronizeType: 1
+    Name: IsInProgress
+  m_SynchronizeLayers:
+  - SynchronizeType: 0
+    LayerIndex: 0
 --- !u!1 &1105236905522046627
 GameObject:
   m_ObjectHideFlags: 0
@@ -488,6 +527,37 @@ Transform:
   - {fileID: 7230693113683362170}
   m_Father: {fileID: 759688547701346365}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1139406314239103197
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8820398269315972791}
+  m_Layer: 0
+  m_Name: target_position
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8820398269315972791
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1139406314239103197}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.326, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 458182501617602760}
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1401369372437637712
 GameObject:
@@ -2251,6 +2321,7 @@ GameObject:
   - component: {fileID: 4236213630817990598}
   - component: {fileID: 6413660301281662513}
   - component: {fileID: 73386722954771674}
+  - component: {fileID: 6846811295076174036}
   m_Layer: 0
   m_Name: marine
   m_TagString: Untagged
@@ -2267,7 +2338,7 @@ Transform:
   m_GameObject: {fileID: 7437007900683770838}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.8, y: 0.9, z: 0.8}
+  m_LocalScale: {x: 0.9, y: 0.9, z: 0.9}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6751884811783003247}
@@ -2384,10 +2455,10 @@ MonoBehaviour:
         m_Calls: []
   canBeAttacked: 1
   attackTargetPosition:
-    status: 0
-    obj: {fileID: 0}
-    indexKey: 0
-    entity: {fileID: 0}
+    status: 1
+    obj: {fileID: 8820398269315972791}
+    indexKey: 3
+    entity: {fileID: 2407889157946834110}
   stopMovingOnDamage: 0
 --- !u!114 &202481111501360404
 MonoBehaviour:
@@ -2548,10 +2619,28 @@ MonoBehaviour:
   Synchronization: 3
   OwnershipTransfer: 0
   observableSearch: 2
-  ObservedComponents: []
+  ObservedComponents:
+  - {fileID: 6846811295076174036}
+  - {fileID: 1830645519334958995}
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
+--- !u!114 &6846811295076174036
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7437007900683770838}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SynchronizePosition: 1
+  m_SynchronizeRotation: 1
+  m_SynchronizeScale: 0
+  m_UseLocal: 0
 --- !u!1 &7452521323852706607
 GameObject:
   m_ObjectHideFlags: 0

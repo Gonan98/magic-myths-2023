@@ -9,6 +9,8 @@ using RTSEngine.Entities;
 using RTSEngine.Event;
 using RTSEngine.Game;
 using RTSEngine.Utilities;
+using Photon.Pun;
+using System.IO;
 
 namespace RTSEngine.BuildingExtension
 {
@@ -136,7 +138,9 @@ namespace RTSEngine.BuildingExtension
 
         public IBuilding CreatePlacedBuildingLocal(IBuilding buildingPrefab, Vector3 spawnPosition, Quaternion spawnRotation, InitBuildingParameters initParams)
         {
-            IBuilding newBuilding = Instantiate(buildingPrefab.gameObject, spawnPosition, spawnRotation).GetComponent<IBuilding>();
+            //IBuilding newBuilding = Instantiate(buildingPrefab.gameObject, spawnPosition, spawnRotation).GetComponent<IBuilding>();
+            object[] initialData = new object[] { JsonUtility.ToJson(initParams) };
+            IBuilding newBuilding = PhotonNetwork.Instantiate(Path.Combine("Prefabs", buildingPrefab.Code), spawnPosition, spawnRotation, 0, initialData).GetComponent<IBuilding>();
 
             newBuilding.gameObject.SetActive(true);
             newBuilding.Init(gameMgr, initParams);

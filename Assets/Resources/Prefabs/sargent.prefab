@@ -421,6 +421,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8083c6726f780bf44ae59c7cee549d69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &2849947148832968096
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7798466987728046838}
+  m_Layer: 0
+  m_Name: target_position
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7798466987728046838
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2849947148832968096}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.527, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7508139238175458353}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4130088121063255009
 GameObject:
   m_ObjectHideFlags: 0
@@ -863,6 +894,7 @@ GameObject:
   - component: {fileID: 7508139238175458353}
   - component: {fileID: 3351808095607301670}
   - component: {fileID: 5984377308155546393}
+  - component: {fileID: 8806194698401867870}
   m_Layer: 0
   m_Name: sargent_model
   m_TagString: Untagged
@@ -890,6 +922,7 @@ Transform:
   - {fileID: 7508139238175458389}
   - {fileID: 7508139238175458375}
   - {fileID: 5129291752562790414}
+  - {fileID: 7798466987728046838}
   m_Father: {fileID: 558255402989567378}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -930,6 +963,7 @@ MonoBehaviour:
     connectedChildren:
     - {fileID: 5129291752562790414}
     - {fileID: 7508139238175458431}
+    - {fileID: 7798466987728046838}
   animatorConnections:
     connectedChildren:
     - {fileID: 3351808095607301670}
@@ -941,6 +975,42 @@ MonoBehaviour:
     - {fileID: 7508139238169892181}
     - {fileID: 7508139238169892187}
     - {fileID: 7508139238169892185}
+--- !u!114 &8806194698401867870
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7508139238175102993}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b8c4a61274f60b4ea5fb4299cfdbf14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ShowLayerWeightsInspector: 1
+  ShowParameterInspector: 1
+  m_SynchronizeParameters:
+  - Type: 4
+    SynchronizeType: 1
+    Name: IsIdle
+  - Type: 4
+    SynchronizeType: 1
+    Name: IsTakeDamage
+  - Type: 4
+    SynchronizeType: 1
+    Name: IsDead
+  - Type: 4
+    SynchronizeType: 1
+    Name: IsMoving
+  - Type: 4
+    SynchronizeType: 1
+    Name: InMvtState
+  - Type: 4
+    SynchronizeType: 1
+    Name: IsInProgress
+  m_SynchronizeLayers:
+  - SynchronizeType: 0
+    LayerIndex: 0
 --- !u!1 &7508139238175102995
 GameObject:
   m_ObjectHideFlags: 0
@@ -3375,6 +3445,7 @@ GameObject:
   - component: {fileID: 3666550148387205797}
   - component: {fileID: 6662061280064272158}
   - component: {fileID: 1128629617368975722}
+  - component: {fileID: 8240309910594878654}
   m_Layer: 0
   m_Name: sargent
   m_TagString: Untagged
@@ -3540,10 +3611,10 @@ MonoBehaviour:
         m_Calls: []
   canBeAttacked: 1
   attackTargetPosition:
-    status: 0
-    obj: {fileID: 0}
-    indexKey: 0
-    entity: {fileID: 0}
+    status: 1
+    obj: {fileID: 7798466987728046838}
+    indexKey: 2
+    entity: {fileID: 2158594942457285485}
   stopMovingOnDamage: 0
 --- !u!114 &5288248140691443592
 MonoBehaviour:
@@ -3704,7 +3775,25 @@ MonoBehaviour:
   Synchronization: 3
   OwnershipTransfer: 0
   observableSearch: 2
-  ObservedComponents: []
+  ObservedComponents:
+  - {fileID: 8240309910594878654}
+  - {fileID: 8806194698401867870}
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
+--- !u!114 &8240309910594878654
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9198008930089406237}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SynchronizePosition: 1
+  m_SynchronizeRotation: 1
+  m_SynchronizeScale: 0
+  m_UseLocal: 0

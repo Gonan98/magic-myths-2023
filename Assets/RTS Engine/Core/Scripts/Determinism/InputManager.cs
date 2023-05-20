@@ -130,6 +130,7 @@ namespace RTSEngine.Determinism
             // Entity prefabs are actually just inactive instances of the original prefabs that have been initialized with InitPrefab
 
             foreach (IFactionSlot faction in gameMgr.FactionSlots)
+                //if (faction.IsLocalPlayerFaction())
                 faction.InitDefaultFactionEntities();
         }
 

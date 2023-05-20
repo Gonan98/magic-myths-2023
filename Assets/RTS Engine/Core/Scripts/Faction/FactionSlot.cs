@@ -11,6 +11,8 @@ using RTSEngine.Logging;
 using RTSEngine.Event;
 using RTSEngine.Cameras;
 using UnityEngine.Serialization;
+using Photon.Realtime;
+using Photon.Pun;
 
 namespace RTSEngine.Faction
 {
@@ -58,7 +60,7 @@ namespace RTSEngine.Faction
         #endregion
 
         #region Initializing/Terminating
-        public void Init(FactionSlotData data, int ID, IGameManager gameMgr)
+        public void Init(FactionSlotData data, int ID, IGameManager gameMgr, Player player)
         {
             this.gameMgr = gameMgr;
             this.logger = this.gameMgr.GetService<IGameLoggingService>();
@@ -68,6 +70,10 @@ namespace RTSEngine.Faction
                 $"[FactionSlot] Slot state must be set to inactive in order to initialize it, current state is '{State}'!",
                 source: gameMgr))
                 return;
+
+            data.role = FactionSlotRole.client;
+            data.name = player.NickName;
+            data.isLocalPlayer = data.name == PhotonNetwork.LocalPlayer.NickName;
 
             this.data = data;
             this.ID = ID;
@@ -170,6 +176,13 @@ namespace RTSEngine.Faction
                     unitInitParams.gotoPosition = instance.transform.position;
                     (instance as IUnit).Init(gameMgr, unitInitParams);
                 }
+
+                if (data.isLocalPlayer)
+                {
+                    instance.GetComponent<PhotonView>().TransferOwnership(PhotonNetwork.LocalPlayer);
+                    Debug.Log($"Una entidad fue transferida a {data.name}");
+                }
+
             }
 
             // Destroy the unusued entities (ones that do not fit the current faction's type)

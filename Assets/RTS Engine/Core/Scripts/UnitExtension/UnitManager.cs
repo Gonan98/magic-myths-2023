@@ -8,6 +8,8 @@ using RTSEngine.Determinism;
 using RTSEngine.Entities;
 using RTSEngine.Event;
 using RTSEngine.Game;
+using Photon.Pun;
+using System.IO;
 
 namespace RTSEngine.UnitExtension
 {
@@ -143,13 +145,15 @@ namespace RTSEngine.UnitExtension
 
         public IUnit CreateUnitLocal(IUnit unitPrefab, Vector3 spawnPosition, Quaternion spawnRotation, InitUnitParameters initParams)
         {
-            IUnit newUnit = Instantiate(unitPrefab.gameObject, spawnPosition, spawnRotation).GetComponent<IUnit>();
-
+            //IUnit newUnit = Instantiate(unitPrefab.gameObject, spawnPosition, spawnRotation).GetComponent<IUnit>();
+            object[] initialData = new object[] { JsonUtility.ToJson(initParams) };
+            IUnit newUnit = PhotonNetwork.Instantiate(Path.Combine("Prefabs", unitPrefab.Code) , spawnPosition, spawnRotation, 0, initialData).GetComponent<IUnit>();
             newUnit.gameObject.SetActive(true);
             newUnit.Init(gameMgr, initParams);
 
             return newUnit;
         }
+
         #endregion
     }
 }

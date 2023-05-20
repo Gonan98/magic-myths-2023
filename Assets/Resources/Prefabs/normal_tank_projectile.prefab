@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 952528786484550038}
   - component: {fileID: 2285161750474810032}
   - component: {fileID: 1671433028485025341}
+  - component: {fileID: -7653165263024713581}
   m_Layer: 0
   m_Name: normal_tank_projectile
   m_TagString: Untagged
@@ -221,6 +222,22 @@ MonoBehaviour:
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
+--- !u!114 &-7653165263024713581
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6554923001840711702}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64179f3720bbfe947b7724caa67b7c1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SynchronizeVelocity: 1
+  m_SynchronizeAngularVelocity: 0
+  m_TeleportEnabled: 0
+  m_TeleportIfDistanceGreaterThan: 3
 --- !u!1001 &3051412744782464666
 PrefabInstance:
   m_ObjectHideFlags: 0

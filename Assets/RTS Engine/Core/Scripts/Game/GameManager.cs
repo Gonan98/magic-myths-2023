@@ -13,6 +13,8 @@ using RTSEngine.Audio;
 using RTSEngine.Logging;
 using RTSEngine.Service;
 using RTSEngine.Utilities;
+using Photon.Pun;
+using Photon.Realtime;
 
 namespace RTSEngine.Game
 {
@@ -206,13 +208,16 @@ namespace RTSEngine.Game
 
         private bool Build ()
         {
+            Player[] players = PhotonNetwork.PlayerList;
+
+            if (players.Length != factionSlots.Count) return false;
             // No pre defined builder? Use the default game settings!
             if(!CurrBuilder.IsValid())
             {
                 RandomizeFactionSlots();
 
                 for (int i = 0; i < factionSlots.Count; i++)
-                    factionSlots[i].Init(factionSlots[i].Data, ID:i, this);
+                    factionSlots[i].Init(factionSlots[i].Data, ID:i, this, players[i]);
 
                 return true;
             }
@@ -229,7 +234,7 @@ namespace RTSEngine.Game
 
             for (int i = 0; i < CurrBuilder.FactionSlotCount; i++)
             {
-                factionSlots[i].Init(CurrBuilder.FactionSlotDataSet.ElementAt(i), ID:i, this);
+                factionSlots[i].Init(CurrBuilder.FactionSlotDataSet.ElementAt(i), ID:i, this, players[i]);
             }
 
             // Remove the extra unneeded slots

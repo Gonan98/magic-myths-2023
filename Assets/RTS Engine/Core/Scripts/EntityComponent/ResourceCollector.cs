@@ -10,6 +10,7 @@ using RTSEngine.UnitExtension;
 using RTSEngine.Model;
 using System;
 using RTSEngine.Search;
+using Photon.Pun;
 
 namespace RTSEngine.EntityComponent
 {
@@ -40,6 +41,8 @@ namespace RTSEngine.EntityComponent
         #region Initializing/Terminating
         protected sealed override void OnProgressInit()
         {
+            //if (!unit.GetComponent<PhotonView>().IsMine) return;
+
             this.resourceMgr = gameMgr.GetService<IResourceManager>();
             this.gridSearch = gameMgr.GetService<IGridSearchHandler>(); 
 
@@ -132,6 +135,8 @@ namespace RTSEngine.EntityComponent
 
         protected override bool CanEnableProgress()
         {
+            //if (!unit.GetComponent<PhotonView>().IsMine) return false;
+
             return IsTargetInRange(transform.position, Target)
                 && (Target.instance.CanAutoCollect || unit.DropOffSource.State == DropOffState.inactive || unit.DropOffSource.State == DropOffState.goingBack);
         }

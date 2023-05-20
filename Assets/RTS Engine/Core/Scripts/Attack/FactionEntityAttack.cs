@@ -145,7 +145,7 @@ namespace RTSEngine.EntityComponent
             // Init attack sub-components:
             damage.Init(gameMgr, this);
             launcher.Init(gameMgr, this);
-            Weapon.Init(gameMgr, this);
+            weapon.Init(gameMgr, this);
             lineOfSight.Init(gameMgr, this);
 
             ResetAttack();
@@ -154,7 +154,7 @@ namespace RTSEngine.EntityComponent
 
             OnAttackInit();
 
-            Weapon.Toggle(IsActive);
+            weapon.Toggle(IsActive);
         }
 
         protected virtual void OnAttackInit() { }

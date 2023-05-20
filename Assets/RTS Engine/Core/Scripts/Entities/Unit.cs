@@ -6,9 +6,11 @@ using RTSEngine.Game;
 using RTSEngine.Animation;
 using RTSEngine.Health;
 
+using Photon.Pun;
+
 namespace RTSEngine.Entities
 {
-    public class Unit : FactionEntity, IUnit
+    public class Unit : FactionEntity, IUnit, IPunInstantiateMagicCallback
     {
         #region Class Attributes
         public sealed override EntityType Type => EntityType.unit;
@@ -70,6 +72,15 @@ namespace RTSEngine.Entities
             // Allow CompleteInit() to initialize the movement component since all IEntityComponent components are initialized with that call.
             Radius = MovementComponent.Controller.Radius; //for units, their radius is overwritten by the movement component's controller radius
             SetInitialTargetPosition(initParams);
+        }
+
+        public void OnPhotonInstantiate(PhotonMessageInfo info)
+        {
+            if (!info.photonView.IsMine)
+            {   
+                InitUnitParameters initParameters = JsonUtility.FromJson<InitUnitParameters>((string)info.photonView.InstantiationData[0]);
+                Init(FindAnyObjectByType<GameManager>(), initParameters);
+            }
         }
 
         protected sealed override void FetchComponents()
