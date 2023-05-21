@@ -11,6 +11,7 @@ using RTSEngine.Game;
 using RTSEngine.UnitExtension;
 using RTSEngine.Logging;
 using RTSEngine.Model;
+using Photon.Pun;
 
 namespace RTSEngine.Animation
 {
@@ -137,9 +138,45 @@ namespace RTSEngine.Animation
             ResetOverrideController();
 
             SetState(AnimatorState.idle);
+            //Unit.GetComponent<PhotonView>().RPC(nameof(RPCSetState), RpcTarget.AllViaServer, AnimatorState.idle);
         }
 
         public void SetState(AnimatorState newState)
+        {
+            /*
+            if (LockState == true)
+                return;
+
+            if (CurrState == AnimatorState.dead
+                // If the damage animation is active, only allow to change the animation if the next one is a death animation.
+                || (CurrState == AnimatorState.takeDamage && newState != AnimatorState.dead))
+                return;
+
+            CurrState = newState;
+
+            animator.SetBool(UnitAnimator.Parameters[AnimatorState.takeDamage], CurrState == AnimatorState.takeDamage);
+
+            // Stop the idle animation in case take damage animation is played since the take damage animation is broken by the idle anim
+            animator.SetBool(UnitAnimator.Parameters[AnimatorState.idle], CurrState == AnimatorState.idle);
+
+            // If the new animator state is the taking damage one then do not disable the rest of animations since as soon as the take damage animation is disabled, we want to get back to the last active state
+            if (CurrState == AnimatorState.takeDamage)
+            {
+                animator.SetBool(UnitAnimator.Parameters[AnimatorState.inProgress], false);
+                return;
+            }
+
+            foreach (AnimatorState state  in UnitAnimator.States)
+                if (state != AnimatorState.movingState)
+                    animator.SetBool(UnitAnimator.Parameters[state], state == CurrState);
+
+            animator.SetBool(UnitAnimator.Parameters[AnimatorState.movingState], CurrState == AnimatorState.moving);
+            */
+            Unit.GetComponent<PhotonView>().RPC(nameof(RPCSetState), RpcTarget.AllViaServer, newState);
+        }
+
+        [PunRPC]
+        void RPCSetState(AnimatorState newState)
         {
             if (LockState == true)
                 return;

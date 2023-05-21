@@ -10,7 +10,7 @@ using Photon.Pun;
 
 namespace RTSEngine.Entities
 {
-    public class Unit : FactionEntity, IUnit, IPunInstantiateMagicCallback
+    public class Unit : FactionEntity, IUnit, IPunInstantiateMagicCallback//, IPunObservable
     {
         #region Class Attributes
         public sealed override EntityType Type => EntityType.unit;
@@ -82,6 +82,20 @@ namespace RTSEngine.Entities
                 Init(FindAnyObjectByType<GameManager>(), initParameters);
             }
         }
+
+        /*public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
+        {
+            if (stream.IsWriting)
+            {
+                stream.SendNext(transform.position);
+                stream.SendNext(transform.rotation);
+            }
+            else
+            {
+                transform.position = (Vector3)stream.ReceiveNext();
+                transform.rotation = (Quaternion)stream.ReceiveNext();
+            }
+        }*/
 
         protected sealed override void FetchComponents()
         {

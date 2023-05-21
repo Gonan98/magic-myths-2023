@@ -15,6 +15,7 @@ using RTSEngine.Movement;
 using RTSEngine.Selection;
 using RTSEngine.Utilities;
 using System;
+using Photon.Pun;
 
 namespace RTSEngine.EntityComponent
 {

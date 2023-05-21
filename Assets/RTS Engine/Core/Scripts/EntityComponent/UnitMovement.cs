@@ -14,9 +14,11 @@ using RTSEngine.Terrain;
 using RTSEngine.UnitExtension;
 using RTSEngine.Game;
 
+using Photon.Pun;
+
 namespace RTSEngine.EntityComponent
 {
-    public class UnitMovement : FactionEntityTargetComponent<IEntity>, IMovementComponent 
+    public class UnitMovement : FactionEntityTargetComponent<IEntity>, IMovementComponent//, IPunObservable
     {
         #region Class Attributes
         protected IUnit unit { private set; get; }
@@ -488,6 +490,20 @@ namespace RTSEngine.EntityComponent
             if (setImmediately)
                 unit.transform.rotation = NextRotationTarget;
         }
+
+        /*
+        public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
+        {
+            if (stream.IsWriting)
+            {
+                stream.SendNext(isMoving);
+            }
+            else
+            {
+                isMoving = (bool)stream.ReceiveNext();
+            }
+        }
+        */
         #endregion
     }
 }

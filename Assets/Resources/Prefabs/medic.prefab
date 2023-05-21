@@ -1725,7 +1725,7 @@ MonoBehaviour:
     SynchronizeType: 1
     Name: IsInProgress
   m_SynchronizeLayers:
-  - SynchronizeType: 0
+  - SynchronizeType: 1
     LayerIndex: 0
 --- !u!1 &5784208462839194315
 GameObject:
@@ -2693,7 +2693,7 @@ MonoBehaviour:
   m_SynchronizePosition: 1
   m_SynchronizeRotation: 1
   m_SynchronizeScale: 0
-  m_UseLocal: 0
+  m_UseLocal: 1
 --- !u!1 &8295335971347851070
 GameObject:
   m_ObjectHideFlags: 0
