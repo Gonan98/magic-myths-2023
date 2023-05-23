@@ -14,7 +14,7 @@ using UnityEngine;
 
 namespace RTSEngine.EntityComponent
 {
-    public abstract class EntityWorkerManager : MonoBehaviour, IEntityWorkerManager, IEntityPreInitializable
+    public abstract class EntityWorkerManager : MonoBehaviour, IEntityWorkerManager, IEntityPreInitializable, IPunObservable
     {
         #region Attributes
         public IEntity Entity {private set; get;}
@@ -242,6 +242,20 @@ namespace RTSEngine.EntityComponent
             freePositionIndexes.Add(positionIndex);
 
             RaiseWorkerRemoved(Entity, new EntityEventArgs<IUnit>(worker));
+        }
+
+        public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
+        {
+            if (stream.IsWriting)
+            {
+                int[] array = freePositionIndexes.ToArray();
+                stream.SendNext(array);
+            }
+            else
+            {
+                int[] array = (int[])stream.ReceiveNext();
+                freePositionIndexes = new List<int>(array);
+            }
         }
         #endregion
     }

@@ -172,7 +172,7 @@ namespace RTSEngine.Animation
 
             animator.SetBool(UnitAnimator.Parameters[AnimatorState.movingState], CurrState == AnimatorState.moving);
             */
-            Unit.GetComponent<PhotonView>().RPC(nameof(RPCSetState), RpcTarget.AllViaServer, newState);
+            Unit.GetComponent<PhotonView>().RPC(nameof(RPCSetState), RpcTarget.All, newState);
         }
 
         [PunRPC]

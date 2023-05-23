@@ -17,7 +17,7 @@ using Photon.Pun;
 
 namespace RTSEngine.Health
 {
-    public abstract class EntityHealth : MonoBehaviour, IEntityHealth, IEntityPreInitializable, IPunObservable
+    public abstract class EntityHealth : MonoBehaviour, IEntityHealth, IEntityPreInitializable
     {
         #region Class Attributes
         [HideInInspector]
@@ -361,18 +361,6 @@ namespace RTSEngine.Health
         }
 
         protected virtual void OnDestroyed(bool upgrade, IEntity source) { }
-
-        public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
-        {
-            if (stream.IsWriting)
-            {
-                stream.SendNext(CurrHealth);
-            }
-            else
-            {
-                this.CurrHealth = (int)stream.ReceiveNext();
-            }
-        }
         #endregion
     }
 }
