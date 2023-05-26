@@ -10,6 +10,9 @@ using RTSEngine.Upgrades;
 using RTSEngine.BuildingExtension;
 using RTSEngine.Audio;
 using RTSEngine.UnitExtension;
+using Photon.Pun;
+using Photon.Realtime;
+using ExitGames.Client.Photon;
 
 namespace RTSEngine.EntityComponent
 {
@@ -153,6 +156,7 @@ namespace RTSEngine.EntityComponent
             if (LastTarget.instance.IsValid())
                 LastTarget.instance.WorkerMgr.Remove(unit);
         }
+
         #endregion
 
         #region Handling Progress
@@ -168,7 +172,9 @@ namespace RTSEngine.EntityComponent
         protected override void OnProgress()
         {
             Target.instance.Health.Add(new HealthUpdateArgs(healthPerProgress, unit));
+            //PhotonNetwork.RaiseEvent(NetworkEvents.UpdateHealth, healthPerProgress, new RaiseEventOptions { Receivers = ReceiverGroup.Others }, SendOptions.SendReliable);
         }
+
         #endregion
 
         #region Searching/Updating Target
@@ -281,6 +287,11 @@ namespace RTSEngine.EntityComponent
                 out string tooltipText);
 
             return tooltipText;
+        }
+
+        public void OnEvent(EventData photonEvent)
+        {
+            throw new System.NotImplementedException();
         }
         #endregion
     }

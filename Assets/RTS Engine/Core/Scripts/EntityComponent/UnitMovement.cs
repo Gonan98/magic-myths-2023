@@ -202,6 +202,8 @@ namespace RTSEngine.EntityComponent
         /// </summary>
         void FixedUpdate()
         {
+            if (!this.pv.IsMine) return;
+
             if (unit.Health.IsDead) //if the unit is already dead
                 return; //do not update movement
 

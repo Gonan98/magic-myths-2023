@@ -1,4 +1,6 @@
-﻿using Photon.Pun;
+﻿using ExitGames.Client.Photon;
+using Photon.Pun;
+using Photon.Realtime;
 using RTSEngine.Entities;
 using RTSEngine.Event;
 using RTSEngine.Game;
@@ -7,14 +9,12 @@ using RTSEngine.Model;
 using RTSEngine.Movement;
 using RTSEngine.Terrain;
 using RTSEngine.UnitExtension;
-using System;
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 
 namespace RTSEngine.EntityComponent
 {
-    public abstract class EntityWorkerManager : MonoBehaviour, IEntityWorkerManager, IEntityPreInitializable, IPunObservable
+    public abstract class EntityWorkerManager : MonoBehaviour, IEntityWorkerManager, IEntityPreInitializable
     {
         #region Attributes
         public IEntity Entity {private set; get;}
@@ -92,6 +92,9 @@ namespace RTSEngine.EntityComponent
 
                 workerPosTransform.Position = nextWorkerPosition;
             }
+
+            //if (entity.IsLocalPlayerFaction())
+            //    photonView.TransferOwnership(PhotonNetwork.LocalPlayer);
         }
 
         public void Disable() { }
@@ -150,6 +153,8 @@ namespace RTSEngine.EntityComponent
 
         public ErrorMessage Move(IUnit worker, AddableUnitData addableData)
         {
+            if (!this.Entity.GetComponent<PhotonView>().IsMine) return ErrorMessage.none;
+
             ErrorMessage errorMsg;
             if((errorMsg = CanMove(worker, addableData)) != ErrorMessage.none)
             {
@@ -242,20 +247,6 @@ namespace RTSEngine.EntityComponent
             freePositionIndexes.Add(positionIndex);
 
             RaiseWorkerRemoved(Entity, new EntityEventArgs<IUnit>(worker));
-        }
-
-        public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
-        {
-            if (stream.IsWriting)
-            {
-                int[] array = freePositionIndexes.ToArray();
-                stream.SendNext(array);
-            }
-            else
-            {
-                int[] array = (int[])stream.ReceiveNext();
-                freePositionIndexes = new List<int>(array);
-            }
         }
         #endregion
     }

@@ -15,7 +15,7 @@ using Photon.Pun;
 
 namespace RTSEngine.Animation
 {
-    public class UnitAnimatorController : MonoBehaviour, IAnimatorController, IEntityPostInitializable
+    public class UnitAnimatorController : MonoBehaviourPun, IAnimatorController, IEntityPostInitializable
     {
         #region Class Attributes
         public IUnit Unit { private set; get; }
@@ -138,7 +138,6 @@ namespace RTSEngine.Animation
             ResetOverrideController();
 
             SetState(AnimatorState.idle);
-            //Unit.GetComponent<PhotonView>().RPC(nameof(RPCSetState), RpcTarget.AllViaServer, AnimatorState.idle);
         }
 
         public void SetState(AnimatorState newState)
@@ -172,7 +171,8 @@ namespace RTSEngine.Animation
 
             animator.SetBool(UnitAnimator.Parameters[AnimatorState.movingState], CurrState == AnimatorState.moving);
             */
-            Unit.GetComponent<PhotonView>().RPC(nameof(RPCSetState), RpcTarget.All, newState);
+            
+           this.photonView.RPC(nameof(RPCSetState), RpcTarget.All, newState);
         }
 
         [PunRPC]
@@ -245,6 +245,12 @@ namespace RTSEngine.Animation
         }
 
         public void ResetOverrideController ()
+        {
+            this.photonView.RPC(nameof(RPCResetOverrideController), RpcTarget.All);
+        }
+
+        [PunRPC]
+        void RPCResetOverrideController()
         {
             if (overrideResetCoroutine.IsValid())
                 StopCoroutine(overrideResetCoroutine);

@@ -135,8 +135,6 @@ namespace RTSEngine.EntityComponent
 
         protected override bool CanEnableProgress()
         {
-            //if (!unit.GetComponent<PhotonView>().IsMine) return false;
-
             return IsTargetInRange(transform.position, Target)
                 && (Target.instance.CanAutoCollect || unit.DropOffSource.State == DropOffState.inactive || unit.DropOffSource.State == DropOffState.goingBack);
         }

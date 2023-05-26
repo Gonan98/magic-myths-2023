@@ -177,7 +177,7 @@ namespace RTSEngine.Faction
                     (instance as IUnit).Init(gameMgr, unitInitParams);
                 }
 
-                if (data.isLocalPlayer)
+                if (instance.IsLocalPlayerFaction())
                 {
                     instance.GetComponent<PhotonView>().TransferOwnership(PhotonNetwork.LocalPlayer);
                     Debug.Log($"Una entidad fue transferida a {data.name}");

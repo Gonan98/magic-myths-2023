@@ -6,6 +6,7 @@ using RTSEngine.Entities;
 using RTSEngine.Event;
 using System;
 using RTSEngine.Game;
+using Photon.Pun;
 
 namespace RTSEngine.Health
 {
@@ -52,12 +53,17 @@ namespace RTSEngine.Health
         {
             if(Building.IsBuilt)
             {
-                stateHandler.Activate(constructionCompleteState);
-
-                stateHandler.Reset(States, CurrHealth);
+                this.photonView.RPC(nameof(RPCOnMaxHealthReached), RpcTarget.All);
             }
 
             base.OnMaxHealthReached(args);
+        }
+
+        [PunRPC]
+        void RPCOnMaxHealthReached()
+        {
+            stateHandler.Activate(constructionCompleteState);
+            stateHandler.Reset(States, CurrHealth);
         }
         #endregion
 

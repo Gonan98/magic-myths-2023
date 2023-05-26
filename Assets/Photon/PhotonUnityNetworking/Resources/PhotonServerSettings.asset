@@ -36,10 +36,9 @@ MonoBehaviour:
   RpcList:
   - ClickRpc
   - DestroyRpc
-  - RPCToggleReady
-  - UpdateReadyStatus
-  - RPCUpdateReadyStatus
+  - RPCResetOverrideController
   - RPCSetState
+  - RPCOnMaxHealthReached
   DisableAutoOpenWizard: 1
   ShowSettings: 0
   DevRegionSetOnce: 1

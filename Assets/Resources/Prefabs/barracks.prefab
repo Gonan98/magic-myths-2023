@@ -308,15 +308,15 @@ MonoBehaviour:
   isActive: 1
   tabID:
     x: 0
-    y: 0
+    y: 1
   creationTasks:
-  - taskTitle: 'Create Unit: marinev2'
+  - taskTitle: 'Create Unit: marine'
     taskUI: {fileID: 11400000, guid: 0059ef3bc86dcad45beea88557a0ad1f, type: 2}
     requiredResources: []
     factionEntityRequirements: []
     missingRequirementData:
       icon: {fileID: 0}
-      color: {r: 0, g: 0, b: 0, a: 0}
+      color: {r: 1, g: 0.3882353, b: 0.2784314, a: 1}
     prefabObject: {fileID: 7437007900683770838, guid: cf9bc8ba062123a4e8edf33fde6bdb48,
       type: 3}
     limit: 0
@@ -327,7 +327,7 @@ MonoBehaviour:
     factionEntityRequirements: []
     missingRequirementData:
       icon: {fileID: 0}
-      color: {r: 0, g: 0, b: 0, a: 0}
+      color: {r: 1, g: 0.3882353, b: 0.2784314, a: 1}
     prefabObject: {fileID: 1804366032437137779, guid: dbd107d92440e7e4eb113976bfa7b42c,
       type: 3}
     limit: 0
@@ -338,7 +338,7 @@ MonoBehaviour:
     factionEntityRequirements: []
     missingRequirementData:
       icon: {fileID: 0}
-      color: {r: 0, g: 0, b: 0, a: 0}
+      color: {r: 1, g: 0.3882353, b: 0.2784314, a: 1}
     prefabObject: {fileID: 1702407446496924205, guid: 8137ff328a4913649aea41694a82f925,
       type: 3}
     limit: 0
@@ -349,7 +349,7 @@ MonoBehaviour:
     factionEntityRequirements: []
     missingRequirementData:
       icon: {fileID: 0}
-      color: {r: 0, g: 0, b: 0, a: 0}
+      color: {r: 1, g: 0.3882353, b: 0.2784314, a: 1}
     prefabObject: {fileID: 8278229192180363841, guid: befb05aeb9a93e84d89a9799abe705ef,
       type: 3}
     limit: 0
@@ -1052,7 +1052,7 @@ MonoBehaviour:
   OwnershipTransfer: 0
   observableSearch: 2
   ObservedComponents:
-  - {fileID: 8678084812625130364}
+  - {fileID: 7157877516625946587}
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0

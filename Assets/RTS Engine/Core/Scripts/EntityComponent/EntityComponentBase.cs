@@ -7,12 +7,15 @@ using RTSEngine.Entities;
 using RTSEngine.Game;
 using RTSEngine.Logging;
 using RTSEngine.UI;
+using Photon.Pun;
 
 namespace RTSEngine.EntityComponent
 {
     public abstract class EntityComponentBase : MonoBehaviour, IEntityComponent, IEntityPreInitializable
     {
         #region Attributes
+
+        protected PhotonView pv;
         public bool IsInitialized { private set; get; } = false;
         public virtual bool AllowPreEntityInit => false;
 
@@ -56,6 +59,7 @@ namespace RTSEngine.EntityComponent
         {
             this.logger = gameMgr.GetService<IGameLoggingService>();
             this.Entity = entity;
+            this.pv = entity.GetComponent<PhotonView>();
 
             if (IsInitialized)
             {
@@ -68,6 +72,9 @@ namespace RTSEngine.EntityComponent
             OnInit();
 
             IsInitialized = true;
+
+            //if (entity.IsLocalPlayerFaction())
+            //    photonView.TransferOwnership(PhotonNetwork.LocalPlayer);
         }
 
         protected virtual void OnInit() { }

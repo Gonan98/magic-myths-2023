@@ -8,6 +8,8 @@ using RTSEngine.Effect;
 using RTSEngine.Model;
 using RTSEngine.Utilities;
 using Photon.Pun;
+using Photon.Realtime;
+using ExitGames.Client.Photon;
 
 namespace RTSEngine.EntityComponent
 {
@@ -68,6 +70,7 @@ namespace RTSEngine.EntityComponent
         #region Initializing/Terminating
         protected sealed override void OnTargetInit()
         {
+
             progressTimer = new TimeModifiedTimer(progressDuration);
 
             OnProgressInit();
@@ -79,6 +82,8 @@ namespace RTSEngine.EntityComponent
         #region Updating Component State
         private void Update()
         {
+            if (!this.pv.IsMine) return;
+
             if (!IsInitialized
                 || !IsActive
                 || factionEntity.Health.IsDead) //if the faction entity is dead, do not proceed.
