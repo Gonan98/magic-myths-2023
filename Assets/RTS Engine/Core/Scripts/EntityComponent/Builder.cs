@@ -172,7 +172,6 @@ namespace RTSEngine.EntityComponent
         protected override void OnProgress()
         {
             Target.instance.Health.Add(new HealthUpdateArgs(healthPerProgress, unit));
-            //PhotonNetwork.RaiseEvent(NetworkEvents.UpdateHealth, healthPerProgress, new RaiseEventOptions { Receivers = ReceiverGroup.Others }, SendOptions.SendReliable);
         }
 
         #endregion
@@ -287,11 +286,6 @@ namespace RTSEngine.EntityComponent
                 out string tooltipText);
 
             return tooltipText;
-        }
-
-        public void OnEvent(EventData photonEvent)
-        {
-            throw new System.NotImplementedException();
         }
         #endregion
     }

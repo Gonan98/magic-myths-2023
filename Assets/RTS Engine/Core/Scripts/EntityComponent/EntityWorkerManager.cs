@@ -153,7 +153,7 @@ namespace RTSEngine.EntityComponent
 
         public ErrorMessage Move(IUnit worker, AddableUnitData addableData)
         {
-            if (!this.Entity.GetComponent<PhotonView>().IsMine) return ErrorMessage.none;
+            if (!worker.GetComponent<PhotonView>().IsMine) return ErrorMessage.none;
 
             ErrorMessage errorMsg;
             if((errorMsg = CanMove(worker, addableData)) != ErrorMessage.none)
