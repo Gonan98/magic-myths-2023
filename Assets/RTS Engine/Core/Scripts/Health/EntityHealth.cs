@@ -14,6 +14,8 @@ using RTSEngine.Selection;
 using RTSEngine.Utilities;
 using System.Collections;
 using Photon.Pun;
+using Photon.Realtime;
+using ExitGames.Client.Photon;
 
 namespace RTSEngine.Health
 {
@@ -372,6 +374,7 @@ namespace RTSEngine.Health
             {
                 CurrHealth = (int)stream.ReceiveNext();
             }
+            
         }
         #endregion
     }

@@ -10,11 +10,12 @@ using RTSEngine.Movement;
 using RTSEngine.Terrain;
 using RTSEngine.UnitExtension;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 namespace RTSEngine.EntityComponent
 {
-    public abstract class EntityWorkerManager : MonoBehaviour, IEntityWorkerManager, IEntityPreInitializable
+    public abstract class EntityWorkerManager : MonoBehaviour, IEntityWorkerManager, IEntityPreInitializable, IPunObservable
     {
         #region Attributes
         public IEntity Entity {private set; get;}
@@ -92,9 +93,6 @@ namespace RTSEngine.EntityComponent
 
                 workerPosTransform.Position = nextWorkerPosition;
             }
-
-            //if (entity.IsLocalPlayerFaction())
-            //    photonView.TransferOwnership(PhotonNetwork.LocalPlayer);
         }
 
         public void Disable() { }
@@ -199,7 +197,6 @@ namespace RTSEngine.EntityComponent
                 }
 
                 freePositionIndexes.Remove(positionIndex);
-
                 workers.Add(worker);
                 workerToPositionIndex.Add(worker, positionIndex);
 
@@ -247,6 +244,33 @@ namespace RTSEngine.EntityComponent
             freePositionIndexes.Add(positionIndex);
 
             RaiseWorkerRemoved(Entity, new EntityEventArgs<IUnit>(worker));
+        }
+
+        public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
+        {
+            if (stream.IsWriting)
+            {
+                int[] viewIds = workers.Select(w => w.GetComponent<PhotonView>().ViewID).ToArray();
+                int[] pIs = workerToPositionIndex.Values.ToArray();
+                int[] fPi = freePositionIndexes.ToArray();
+
+                stream.SendNext(viewIds);
+                stream.SendNext(pIs);
+                stream.SendNext(fPi);
+            }
+            else
+            {
+                int[] viewIds = (int[])stream.ReceiveNext();
+                int[] pIs = (int[])stream.ReceiveNext();
+                int[] fPi = (int[])stream.ReceiveNext();
+                
+                workers = viewIds.Select(id => PhotonView.Find(id).GetComponent<IUnit>()).ToList();
+                workerToPositionIndex = new Dictionary<IUnit, int>();
+                for (int i = 0; i < workers.Count; i++)
+                    workerToPositionIndex.Add(workers[i], pIs[i]);
+                
+                freePositionIndexes = new List<int>(fPi);
+            }
         }
         #endregion
     }

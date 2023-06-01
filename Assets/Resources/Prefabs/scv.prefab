@@ -746,7 +746,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   code: collector_component
-  isActive: 1
+  isActive: 0
   tabID:
     x: 0
     y: 0
@@ -843,7 +843,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   code: dropoff_source_component
-  isActive: 1
+  isActive: 0
   tabID:
     x: 0
     y: 0

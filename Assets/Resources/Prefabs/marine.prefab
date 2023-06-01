@@ -386,7 +386,6 @@ GameObject:
   - component: {fileID: 458182501617602760}
   - component: {fileID: 3786343313015470607}
   - component: {fileID: 5940264169055303336}
-  - component: {fileID: 1830645519334958995}
   m_Layer: 0
   m_Name: marine_model
   m_TagString: Untagged
@@ -460,42 +459,6 @@ MonoBehaviour:
     connectedChildren:
     - {fileID: 4001948920421197218}
     - {fileID: 683048041222401882}
---- !u!114 &1830645519334958995
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 941281056953715314}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b8c4a61274f60b4ea5fb4299cfdbf14, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ShowLayerWeightsInspector: 1
-  ShowParameterInspector: 1
-  m_SynchronizeParameters:
-  - Type: 4
-    SynchronizeType: 1
-    Name: IsIdle
-  - Type: 4
-    SynchronizeType: 1
-    Name: IsTakeDamage
-  - Type: 4
-    SynchronizeType: 1
-    Name: IsDead
-  - Type: 4
-    SynchronizeType: 1
-    Name: IsMoving
-  - Type: 4
-    SynchronizeType: 1
-    Name: InMvtState
-  - Type: 4
-    SynchronizeType: 1
-    Name: IsInProgress
-  m_SynchronizeLayers:
-  - SynchronizeType: 0
-    LayerIndex: 0
 --- !u!1 &1105236905522046627
 GameObject:
   m_ObjectHideFlags: 0
@@ -2620,8 +2583,8 @@ MonoBehaviour:
   OwnershipTransfer: 0
   observableSearch: 2
   ObservedComponents:
+  - {fileID: 7875229708563219995}
   - {fileID: 6846811295076174036}
-  - {fileID: 1830645519334958995}
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0

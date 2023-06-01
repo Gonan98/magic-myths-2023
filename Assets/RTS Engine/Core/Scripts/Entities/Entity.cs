@@ -20,10 +20,11 @@ using RTSEngine.Utilities;
 using RTSEngine.Model;
 using RTSEngine.Attack;
 using RTSEngine.Movement;
+using Photon.Pun;
 
 namespace RTSEngine.Entities
 {
-    public abstract class Entity : MonoBehaviour, IEntity
+    public abstract class Entity : MonoBehaviourPun, IEntity
     {
         #region Class Attributes
         [HideInInspector]
