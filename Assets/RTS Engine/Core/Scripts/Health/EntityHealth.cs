@@ -19,7 +19,7 @@ using ExitGames.Client.Photon;
 
 namespace RTSEngine.Health
 {
-    public abstract class EntityHealth : MonoBehaviourPun, IEntityHealth, IEntityPreInitializable, IPunObservable
+    public abstract class EntityHealth : MonoBehaviourPun, IEntityHealth, IEntityPreInitializable, IOnEventCallback
     {
         #region Class Attributes
         [HideInInspector]
@@ -258,6 +258,10 @@ namespace RTSEngine.Health
 
             RaiseEntityHealthUpdated(args);
 
+            object[] content = new object[] { this.photonView.ViewID, CurrHealth };
+            Debug.Log($"[EntityHealth] Content: {content.ToStringFull()}");
+            PhotonNetwork.RaiseEvent(NetworkEvent.HEALTH_UPDATED, content, RaiseEventOptions.Default, SendOptions.SendUnreliable);
+
             if (CurrHealth >= MaxHealth)
                 OnMaxHealthReached(args);
             else if (CurrHealth <= 0)
@@ -364,17 +368,24 @@ namespace RTSEngine.Health
 
         protected virtual void OnDestroyed(bool upgrade, IEntity source) { }
 
-        public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
+        public void OnEvent(EventData photonEvent)
         {
-            if (stream.IsWriting)
+            if (photonEvent.Code == NetworkEvent.HEALTH_UPDATED)
             {
-                stream.SendNext(CurrHealth);
+                object[] content = (object[])photonEvent.CustomData;
+                if (this.photonView.ViewID != (int)content[0]) return;
+                CurrHealth = (int)content[1];
             }
-            else
-            {
-                CurrHealth = (int)stream.ReceiveNext();
-            }
-            
+        }
+
+        private void OnEnable()
+        {
+            PhotonNetwork.NetworkingClient.EventReceived += OnEvent;
+        }
+
+        private void OnDisable()
+        {            
+            PhotonNetwork.NetworkingClient.EventReceived -= OnEvent;
         }
         #endregion
     }

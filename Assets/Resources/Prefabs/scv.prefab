@@ -485,7 +485,6 @@ MonoBehaviour:
   OwnershipTransfer: 0
   observableSearch: 2
   ObservedComponents:
-  - {fileID: 114314286443579628}
   - {fileID: 8543880815320473941}
   sceneViewId: 0
   InstantiationId: 0
@@ -746,7 +745,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   code: collector_component
-  isActive: 0
+  isActive: 1
   tabID:
     x: 0
     y: 0
@@ -843,7 +842,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   code: dropoff_source_component
-  isActive: 0
+  isActive: 1
   tabID:
     x: 0
     y: 0

@@ -15,8 +15,10 @@ using UnityEngine;
 
 namespace RTSEngine.EntityComponent
 {
-    public abstract class EntityWorkerManager : MonoBehaviour, IEntityWorkerManager, IEntityPreInitializable, IPunObservable
+    public abstract class EntityWorkerManager : MonoBehaviour, IEntityWorkerManager, IEntityPreInitializable, IOnEventCallback
     {
+        private PhotonView pv;
+
         #region Attributes
         public IEntity Entity {private set; get;}
 
@@ -73,6 +75,7 @@ namespace RTSEngine.EntityComponent
             this.terrainMgr = gameMgr.GetService<ITerrainManager>();
 
             this.Entity = entity;
+            this.pv = entity.GetComponent<PhotonView>();
 
             workers = new List<IUnit>(workerPositions.Length);
             workerToPositionIndex = new Dictionary<IUnit, int>();
@@ -201,6 +204,18 @@ namespace RTSEngine.EntityComponent
                 workerToPositionIndex.Add(worker, positionIndex);
 
                 RaiseWorkerAdded(Entity, new EntityEventArgs<IUnit>(worker));
+                
+                int[] viewIds = workers.Select(w => w.GetComponent<PhotonView>().ViewID).ToArray();
+                int[] pIs = workerToPositionIndex.Values.ToArray();
+                int[] fPi = freePositionIndexes.ToArray();
+                object[] content = new object[]
+                {
+                    pv.ViewID,
+                    viewIds,
+                    pIs,
+                    fPi
+                };
+                PhotonNetwork.RaiseEvent(NetworkEvent.WORKERS_UPDATED, content, RaiseEventOptions.Default, SendOptions.SendReliable);
             }
 
             Vector3 destination = workerPositions[positionIndex].IsValid() ? workerPositions[positionIndex].Position : Entity.transform.position;
@@ -244,9 +259,21 @@ namespace RTSEngine.EntityComponent
             freePositionIndexes.Add(positionIndex);
 
             RaiseWorkerRemoved(Entity, new EntityEventArgs<IUnit>(worker));
+            int[] viewIds = workers.Select(w => w.GetComponent<PhotonView>().ViewID).ToArray();
+            int[] pIs = workerToPositionIndex.Values.ToArray();
+            int[] fPi = freePositionIndexes.ToArray();
+            object[] content = new object[]
+            {
+                pv.ViewID,
+                viewIds,
+                pIs,
+                fPi
+            };
+            Debug.Log($"[EntityWorkerManager] Content: {content.ToString()}");
+            PhotonNetwork.RaiseEvent(NetworkEvent.WORKERS_UPDATED, content, RaiseEventOptions.Default, SendOptions.SendReliable);
         }
 
-        public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
+        /*public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
         {
             if (stream.IsWriting)
             {
@@ -271,6 +298,39 @@ namespace RTSEngine.EntityComponent
                 
                 freePositionIndexes = new List<int>(fPi);
             }
+        }*/
+
+        public void OnEvent(EventData photonEvent)
+        {
+            if (photonEvent.Code == NetworkEvent.WORKERS_UPDATED)
+            {
+                object[] content = (object[])photonEvent.CustomData;
+
+                if (pv.ViewID != (int)content[0]) return;
+
+                int[] viewIds = (int[])content[1];
+                int[] pIs = (int[])content[2];
+                int[] fPi = (int[])content[3];
+                
+
+                workers = viewIds.Select(id => PhotonView.Find(id).GetComponent<IUnit>()).ToList();
+                workerToPositionIndex = new Dictionary<IUnit, int>();
+
+                for (int i = 0; i < workers.Count; i++)
+                    workerToPositionIndex.Add(workers[i], pIs[i]);
+                
+                freePositionIndexes = new List<int>(fPi);
+            }
+        }
+
+        private void OnEnable()
+        {
+            PhotonNetwork.AddCallbackTarget(this);
+        }
+
+        private void OnDisable()
+        {
+            PhotonNetwork.RemoveCallbackTarget(this);
         }
         #endregion
     }

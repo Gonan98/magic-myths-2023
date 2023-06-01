@@ -863,6 +863,7 @@ MonoBehaviour:
   observableSearch: 2
   ObservedComponents:
   - {fileID: 313136348472760067}
+  - {fileID: 4965692380726229438}
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
@@ -948,9 +949,9 @@ MonoBehaviour:
   isActive: 1
   tabID:
     x: 0
-    y: 1
+    y: 0
   creationTasks:
-  - taskTitle: 'Create Unit: worker'
+  - taskTitle: 'Create Unit: scv'
     taskUI: {fileID: 11400000, guid: 5cccdac2cbe8b184e9c283321f4b4457, type: 2}
     requiredResources:
     - type: {fileID: 11400000, guid: 817705b9382efcb44ba26e24afecab19, type: 2}
